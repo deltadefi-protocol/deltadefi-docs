@@ -1,0 +1,2010 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is the Espresso API server.",
+        "title": "Espresso API Server",
+        "contact": {
+            "name": "DeltaDeFi",
+            "url": "https://www.deltadefi.io/",
+            "email": "contact@deltadefi.io"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "paths": {
+        "/accounts/api-key": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Get API key",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "accounts"
+                ],
+                "summary": "Get API key",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-KEY",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.GetAPIKeyResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/accounts/balance": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Get account balance",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "accounts"
+                ],
+                "summary": "Get account balance",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-KEY",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/espresso_internal_api_entities.AssetBalance"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/accounts/deposit-records": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Get deposit records",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "accounts"
+                ],
+                "summary": "Get deposit records",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-KEY",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/espresso_internal_api_entities.DepositRecord"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/accounts/deposit/build": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Build deposit transaction",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "accounts"
+                ],
+                "summary": "Build deposit transaction",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-KEY",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Build deposit transaction request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_requests.BuildDepositTransactionRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.BuildDepositTransactionResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/accounts/deposit/submit": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Submit deposit transaction",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "accounts"
+                ],
+                "summary": "Submit deposit transaction",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-KEY",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Submit deposit transaction request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_requests.SubmitDepositTransactionRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.SubmitDepositTransactionResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/accounts/new-api-key": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Create new API key",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "accounts"
+                ],
+                "summary": "Create new API key",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-KEY",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.CreateNewAPIKeyResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/accounts/order-records": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Get order records",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "accounts"
+                ],
+                "summary": "Get order records",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-KEY",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "enum:open,closed",
+                        "name": "status",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.GetOrderRecordResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/accounts/signin": {
+            "post": {
+                "description": "Sign in with wallet address",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "accounts"
+                ],
+                "summary": "Sign in",
+                "parameters": [
+                    {
+                        "description": "Sign in request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_requests.SignInRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.SignInResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/accounts/withdrawal-records": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Get withdrawal records",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "accounts"
+                ],
+                "summary": "Get withdrawal records",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-KEY",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/espresso_internal_api_entities.WithdrawalRecord"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/accounts/withdrawal/build": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Build withdrawal transaction",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "accounts"
+                ],
+                "summary": "Build withdrawal transaction",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-KEY",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Build withdrawal transaction request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_requests.BuildWithdrawalTransactionRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.BuildWithdrawalTransactionResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/accounts/withdrawal/submit": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Submit withdrawal transaction",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "accounts"
+                ],
+                "summary": "Submit withdrawal transaction",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-KEY",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Submit withdrawal transaction request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_requests.SubmitWithdrawalTransactionRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.SubmitWithdrawalTransactionResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/accounts/ws/stream": {
+            "get": {
+                "description": "Subscribe to account streams via WebSocket",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "accounts"
+                ],
+                "summary": "Subscribe to account streams",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "api_key",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "JWT Token",
+                        "name": "token",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "101": {
+                        "description": "Switching Protocols",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/app/get-terms-and-conditions": {
+            "get": {
+                "description": "Get terms and conditions",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "app"
+                ],
+                "summary": "Get terms and conditions",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/app/mock-usdx": {
+            "post": {
+                "description": "Get mock USDX",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "app"
+                ],
+                "summary": "Get mock USDX",
+                "parameters": [
+                    {
+                        "description": "Get mock USDX request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_requests.GetMockUsdxRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.GetMockUsdxResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/app/submit-tx": {
+            "post": {
+                "description": "Submit mockUSDX transaction",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "app"
+                ],
+                "summary": "Submit mockUSDX transaction",
+                "parameters": [
+                    {
+                        "description": "Submit transaction request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_requests.SubmitTxRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/internal/hydra-close": {
+            "post": {
+                "description": "Close hydra",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "internal"
+                ],
+                "summary": "Close hydra",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/internal/hydra-open": {
+            "post": {
+                "description": "Open hydra",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "internal"
+                ],
+                "summary": "Open hydra",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/internal/hydra-open/init-account-balance": {
+            "post": {
+                "description": "Hydra Open - Step 3 - Init and commit utxos",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "internal"
+                ],
+                "summary": "Hydra Open - Step 3 - Init and commit utxos",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/internal/hydra-open/init-and-commit-utxos": {
+            "post": {
+                "description": "Hydra Open - Step 1 - Init and commit utxos",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "internal"
+                ],
+                "summary": "Hydra Open - Step 1 - Init and commit utxos",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/internal/hydra-open/init-empty-utxos": {
+            "post": {
+                "description": "Hydra Open - Step 2 - Init and commit utxos",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "internal"
+                ],
+                "summary": "Hydra Open - Step 2 - Init and commit utxos",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/internal/hydra-open/init-order-book": {
+            "post": {
+                "description": "Hydra Open - Step 4 - Init and commit utxos",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "internal"
+                ],
+                "summary": "Hydra Open - Step 4 - Init and commit utxos",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/internal/hydraOpen": {
+            "post": {
+                "description": "Setup oracles and save initialized app utxos into DB. It must be run after all oracle NFTs are minted.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "internal"
+                ],
+                "summary": "Setup Oracles",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/market/aggregate/{symbol}": {
+            "get": {
+                "description": "Get price aggregates",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "market"
+                ],
+                "summary": "Get price aggregates",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Unix Timestamp",
+                        "name": "end",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Unix Timestamp",
+                        "name": "start",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "enum: 15m,30m,1h,1d,1w,1M",
+                        "name": "interval",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "E.g. ADAUSDX",
+                        "name": "symbol",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/espresso_internal_api_services.Trade"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/market/market-price": {
+            "get": {
+                "description": "Get market price",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "market"
+                ],
+                "summary": "Get market price",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "name": "symbol",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.GetMarketPriceResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/market/ws/depth/{symbol}": {
+            "get": {
+                "description": "Establish a WebSocket connection to receive market depth updates",
+                "tags": [
+                    "market"
+                ],
+                "summary": "Handle websocket market depth",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Symbol",
+                        "name": "symbol",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/market/ws/market-price/{symbol}": {
+            "get": {
+                "description": "Establish a WebSocket connection to receive market price updates",
+                "tags": [
+                    "market"
+                ],
+                "summary": "Handle websocket market price",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Symbol",
+                        "name": "symbol",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/markets/depth": {
+            "get": {
+                "description": "Get market depth",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "market"
+                ],
+                "summary": "Get depth",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "name": "symbol",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.GetMarketDepthResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/order/process-order": {
+            "post": {
+                "description": "Manual process order",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "accounts"
+                ],
+                "summary": "Manual process order",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/espresso_internal_api_response.FillOrderResponse"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/orders/build": {
+            "post": {
+                "description": "Build place order transaction",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "order"
+                ],
+                "summary": "Build place order transaction",
+                "parameters": [
+                    {
+                        "description": "Build place order transaction request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_requests.BuildPlaceOrderTransactionRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.BuildPlaceOrderTransactionResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/orders/submit": {
+            "post": {
+                "description": "Submit place order transaction",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "order"
+                ],
+                "summary": "Submit place order transaction",
+                "parameters": [
+                    {
+                        "description": "Submit place order transaction request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_requests.SubmitPlaceOrderTransactionRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.SubmitPlaceOrderTransactionResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Submit cancel order transaction",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "order"
+                ],
+                "summary": "Submit cancel order transaction",
+                "parameters": [
+                    {
+                        "description": "Submit cancel order transaction request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_requests.SubmitCancelOrderTransactionRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.SubmitCancelOrderTransactionResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/orders/{id}/build": {
+            "delete": {
+                "description": "Build cancel order transaction",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "order"
+                ],
+                "summary": "Build cancel order transaction",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Order ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.BuildCancelOrderTransactionResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/espresso_internal_api_response.ErrorJSONResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "espresso_internal_api_entities.AssetBalance": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string"
+                },
+                "asset_unit": {
+                    "type": "string"
+                },
+                "free": {
+                    "type": "number"
+                },
+                "locked": {
+                    "type": "number"
+                }
+            }
+        },
+        "espresso_internal_api_entities.AssetRecord": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string"
+                },
+                "asset_unit": {
+                    "type": "string"
+                },
+                "qty": {
+                    "type": "number"
+                }
+            }
+        },
+        "espresso_internal_api_entities.DepositRecord": {
+            "type": "object",
+            "properties": {
+                "assets": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/espresso_internal_api_entities.AssetRecord"
+                    }
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "status": {
+                    "$ref": "#/definitions/schema.TransactionStatus"
+                },
+                "tx_hash": {
+                    "type": "string"
+                }
+            }
+        },
+        "espresso_internal_api_entities.WithdrawalRecord": {
+            "type": "object",
+            "properties": {
+                "assets": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/espresso_internal_api_entities.AssetRecord"
+                    }
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "status": {
+                    "$ref": "#/definitions/schema.TransactionStatus"
+                }
+            }
+        },
+        "espresso_internal_api_requests.BuildDepositTransactionRequest": {
+            "type": "object",
+            "required": [
+                "deposit_amount",
+                "input_utxos"
+            ],
+            "properties": {
+                "deposit_amount": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/rum.Asset"
+                    }
+                },
+                "input_utxos": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/rum.UTxO"
+                    }
+                }
+            }
+        },
+        "espresso_internal_api_requests.BuildPlaceOrderTransactionRequest": {
+            "type": "object",
+            "required": [
+                "quantity",
+                "side",
+                "symbol",
+                "type"
+            ],
+            "properties": {
+                "max_slippage": {
+                    "type": "boolean"
+                },
+                "max_slippage_basis_point": {
+                    "type": "integer"
+                },
+                "price": {
+                    "type": "number"
+                },
+                "quantity": {
+                    "type": "number"
+                },
+                "side": {
+                    "$ref": "#/definitions/schema.OrderSide"
+                },
+                "symbol": {
+                    "$ref": "#/definitions/schema.Symbol"
+                },
+                "type": {
+                    "$ref": "#/definitions/schema.OrderType"
+                }
+            }
+        },
+        "espresso_internal_api_requests.BuildWithdrawalTransactionRequest": {
+            "type": "object",
+            "required": [
+                "withdrawal_amount"
+            ],
+            "properties": {
+                "withdrawal_amount": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/rum.Asset"
+                    }
+                }
+            }
+        },
+        "espresso_internal_api_requests.GetMockUsdxRequest": {
+            "type": "object",
+            "required": [
+                "input_utxos",
+                "quantity",
+                "wallet_address"
+            ],
+            "properties": {
+                "input_utxos": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/rum.UTxO"
+                    }
+                },
+                "quantity": {
+                    "type": "integer"
+                },
+                "wallet_address": {
+                    "type": "string"
+                }
+            }
+        },
+        "espresso_internal_api_requests.SignInRequest": {
+            "type": "object",
+            "required": [
+                "wallet_address"
+            ],
+            "properties": {
+                "wallet_address": {
+                    "type": "string"
+                }
+            }
+        },
+        "espresso_internal_api_requests.SubmitCancelOrderTransactionRequest": {
+            "type": "object",
+            "required": [
+                "signed_tx"
+            ],
+            "properties": {
+                "signed_tx": {
+                    "type": "string"
+                }
+            }
+        },
+        "espresso_internal_api_requests.SubmitDepositTransactionRequest": {
+            "type": "object",
+            "required": [
+                "signed_tx"
+            ],
+            "properties": {
+                "signed_tx": {
+                    "type": "string"
+                }
+            }
+        },
+        "espresso_internal_api_requests.SubmitPlaceOrderTransactionRequest": {
+            "type": "object",
+            "required": [
+                "order_id",
+                "signed_tx"
+            ],
+            "properties": {
+                "order_id": {
+                    "type": "string"
+                },
+                "signed_tx": {
+                    "type": "string"
+                }
+            }
+        },
+        "espresso_internal_api_requests.SubmitTxRequest": {
+            "type": "object",
+            "required": [
+                "signed_tx"
+            ],
+            "properties": {
+                "signed_tx": {
+                    "type": "string"
+                }
+            }
+        },
+        "espresso_internal_api_requests.SubmitWithdrawalTransactionRequest": {
+            "type": "object",
+            "required": [
+                "signed_tx"
+            ],
+            "properties": {
+                "signed_tx": {
+                    "type": "string"
+                }
+            }
+        },
+        "espresso_internal_api_response.BuildCancelOrderTransactionResponse": {
+            "type": "object",
+            "properties": {
+                "tx_hex": {
+                    "type": "string"
+                }
+            }
+        },
+        "espresso_internal_api_response.BuildDepositTransactionResponse": {
+            "type": "object",
+            "properties": {
+                "tx_hex": {
+                    "type": "string"
+                }
+            }
+        },
+        "espresso_internal_api_response.BuildPlaceOrderTransactionResponse": {
+            "type": "object",
+            "properties": {
+                "order_id": {
+                    "type": "string"
+                },
+                "tx_hex": {
+                    "type": "string"
+                }
+            }
+        },
+        "espresso_internal_api_response.BuildWithdrawalTransactionResponse": {
+            "type": "object",
+            "properties": {
+                "tx_hex": {
+                    "type": "string"
+                }
+            }
+        },
+        "espresso_internal_api_response.CreateNewAPIKeyResponse": {
+            "type": "object",
+            "properties": {
+                "api_key": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "espresso_internal_api_response.ErrorJSONResponse": {
+            "type": "object",
+            "properties": {
+                "error": {
+                    "type": "string"
+                }
+            }
+        },
+        "espresso_internal_api_response.FillOrderResponse": {
+            "type": "object",
+            "properties": {
+                "tx_hash": {
+                    "type": "string"
+                }
+            }
+        },
+        "espresso_internal_api_response.GetAPIKeyResponse": {
+            "type": "object",
+            "properties": {
+                "api_key": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "espresso_internal_api_response.GetMarketDepthResponse": {
+            "type": "object",
+            "properties": {
+                "asks": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/espresso_internal_api_response.MarketDepth"
+                    }
+                },
+                "bids": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/espresso_internal_api_response.MarketDepth"
+                    }
+                }
+            }
+        },
+        "espresso_internal_api_response.GetMarketPriceResponse": {
+            "type": "object",
+            "properties": {
+                "price": {
+                    "type": "number"
+                }
+            }
+        },
+        "espresso_internal_api_response.GetMockUsdxResponse": {
+            "type": "object",
+            "properties": {
+                "signed_tx": {
+                    "type": "string"
+                },
+                "tx_hash": {
+                    "type": "string"
+                }
+            }
+        },
+        "espresso_internal_api_response.GetOrderRecordResponse": {
+            "type": "object",
+            "properties": {
+                "orders": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/schema.OrderJSON"
+                    }
+                }
+            }
+        },
+        "espresso_internal_api_response.MarketDepth": {
+            "type": "object",
+            "properties": {
+                "price": {
+                    "type": "number"
+                },
+                "quantity": {
+                    "type": "number"
+                }
+            }
+        },
+        "espresso_internal_api_response.SignInResponse": {
+            "type": "object",
+            "properties": {
+                "is_first_time": {
+                    "type": "boolean"
+                },
+                "token": {
+                    "type": "string"
+                }
+            }
+        },
+        "espresso_internal_api_response.SubmitCancelOrderTransactionResponse": {
+            "type": "object",
+            "properties": {
+                "tx_hash": {
+                    "type": "string"
+                }
+            }
+        },
+        "espresso_internal_api_response.SubmitDepositTransactionResponse": {
+            "type": "object",
+            "properties": {
+                "tx_hash": {
+                    "type": "string"
+                }
+            }
+        },
+        "espresso_internal_api_response.SubmitPlaceOrderTransactionResponse": {
+            "type": "object",
+            "properties": {
+                "order": {
+                    "$ref": "#/definitions/schema.OrderJSON"
+                }
+            }
+        },
+        "espresso_internal_api_response.SubmitWithdrawalTransactionResponse": {
+            "type": "object",
+            "properties": {
+                "tx_hash": {
+                    "type": "string"
+                }
+            }
+        },
+        "espresso_internal_api_services.Trade": {
+            "type": "object",
+            "properties": {
+                "close": {
+                    "type": "number"
+                },
+                "high": {
+                    "type": "number"
+                },
+                "low": {
+                    "type": "number"
+                },
+                "open": {
+                    "type": "number"
+                },
+                "symbol": {
+                    "type": "string"
+                },
+                "time": {
+                    "type": "string"
+                },
+                "volume": {
+                    "type": "number"
+                }
+            }
+        },
+        "rum.Asset": {
+            "type": "object",
+            "required": [
+                "quantity",
+                "unit"
+            ],
+            "properties": {
+                "quantity": {
+                    "type": "string"
+                },
+                "unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "rum.Input": {
+            "type": "object",
+            "required": [
+                "output_index",
+                "tx_hash"
+            ],
+            "properties": {
+                "output_index": {
+                    "type": "integer"
+                },
+                "tx_hash": {
+                    "type": "string"
+                }
+            }
+        },
+        "rum.Output": {
+            "type": "object",
+            "required": [
+                "address",
+                "amount"
+            ],
+            "properties": {
+                "address": {
+                    "type": "string"
+                },
+                "amount": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/rum.Asset"
+                    }
+                },
+                "data_hash": {
+                    "type": "string"
+                },
+                "plutus_data": {
+                    "type": "string"
+                },
+                "script_hash": {
+                    "type": "string"
+                },
+                "script_ref": {
+                    "type": "string"
+                }
+            }
+        },
+        "rum.UTxO": {
+            "type": "object",
+            "required": [
+                "input",
+                "output"
+            ],
+            "properties": {
+                "input": {
+                    "$ref": "#/definitions/rum.Input"
+                },
+                "output": {
+                    "$ref": "#/definitions/rum.Output"
+                }
+            }
+        },
+        "schema.OrderExecutionRecordJSON": {
+            "type": "object",
+            "properties": {
+                "counter_party_order_id": {
+                    "type": "string"
+                },
+                "create_time": {
+                    "type": "integer"
+                },
+                "execution_price": {
+                    "type": "number"
+                },
+                "fee_amount": {
+                    "type": "string"
+                },
+                "fee_unit": {
+                    "type": "string"
+                },
+                "filled_amount": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "order_id": {
+                    "type": "string"
+                },
+                "role": {
+                    "$ref": "#/definitions/schema.OrderExecutionRole"
+                }
+            }
+        },
+        "schema.OrderExecutionRole": {
+            "type": "string",
+            "enum": [
+                "maker",
+                "taker"
+            ],
+            "x-enum-varnames": [
+                "OrderExecutionRoleMaker",
+                "OrderExecutionRoleTaker"
+            ]
+        },
+        "schema.OrderJSON": {
+            "type": "object",
+            "properties": {
+                "create_time": {
+                    "type": "integer"
+                },
+                "executed_price": {
+                    "type": "number"
+                },
+                "executed_qty": {
+                    "type": "string"
+                },
+                "fee_charged": {
+                    "type": "string"
+                },
+                "fee_unit": {
+                    "type": "string"
+                },
+                "fills": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/schema.OrderExecutionRecordJSON"
+                    }
+                },
+                "order_id": {
+                    "type": "string"
+                },
+                "orig_qty": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "number"
+                },
+                "side": {
+                    "$ref": "#/definitions/schema.OrderSide"
+                },
+                "slippage": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "symbol": {
+                    "$ref": "#/definitions/schema.Symbol"
+                },
+                "type": {
+                    "$ref": "#/definitions/schema.OrderType"
+                },
+                "update_time": {
+                    "type": "integer"
+                }
+            }
+        },
+        "schema.OrderSide": {
+            "type": "string",
+            "enum": [
+                "buy",
+                "sell"
+            ],
+            "x-enum-varnames": [
+                "BuyOrder",
+                "SellOrder"
+            ]
+        },
+        "schema.OrderType": {
+            "type": "string",
+            "enum": [
+                "market",
+                "limit"
+            ],
+            "x-enum-varnames": [
+                "MarketOrder",
+                "LimitOrder"
+            ]
+        },
+        "schema.Symbol": {
+            "type": "string",
+            "enum": [
+                "ADAUSDX"
+            ],
+            "x-enum-varnames": [
+                "ADAUSDX"
+            ]
+        },
+        "schema.TransactionStatus": {
+            "type": "string",
+            "enum": [
+                "building",
+                "submitted",
+                "submission_failed",
+                "confirmed"
+            ],
+            "x-enum-varnames": [
+                "TxBuilding",
+                "TxSubmitted",
+                "TxSubmissionFailed",
+                "TxConfirmed"
+            ]
+        }
+    }
+}
