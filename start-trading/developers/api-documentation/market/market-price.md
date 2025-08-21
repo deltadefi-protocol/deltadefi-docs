@@ -1,3 +1,7 @@
+---
+description: returns the last traded price
+---
+
 # Market Price
 
 {% openapi src="../../../../.gitbook/assets/swagger (2).json" path="/market/market-price" method="get" %}

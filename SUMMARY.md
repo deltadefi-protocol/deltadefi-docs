@@ -57,6 +57,7 @@
       * [Build cancel Order Transaction](start-trading/developers/api-documentation/order/build-cancel-order-transaction.md)
       * [Submit cancel order transaction](start-trading/developers/api-documentation/order/submit-cancel-order-transaction.md)
   * [Websocket Endpoints](start-trading/developers/websocket-endpoints/README.md)
+    * [Recent trades](start-trading/developers/websocket-endpoints/recent-trades.md)
     * [Account streams](start-trading/developers/websocket-endpoints/account-streams.md)
     * [Market price streams](start-trading/developers/websocket-endpoints/market-price-streams.md)
     * [Market depth streams](start-trading/developers/websocket-endpoints/market-depth-streams.md)
