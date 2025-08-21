@@ -15,8 +15,8 @@ The DeltaDefi API operates securely over HTTPS. All URLs provided in the documen
 
 #### Websocket Endpoint
 
-| Environment |                        Websocket Endpoint                       |
-| :---------: | :-------------------------------------------------------------: |
-|   Pre-Prod  | <mark style="color:blue;">wss://api-staging.deltadefi.io</mark> |
-|   Mainnet   |                        \<to be announced>                       |
+| Environment |                          Websocket Endpoint                         |
+| :---------: | :-----------------------------------------------------------------: |
+|   Pre-Prod  | [wss://stream-staging.deltadefi.io](base-url.md#websocket-endpoint) |
+|   Mainnet   |                          \<to be announced>                         |
 

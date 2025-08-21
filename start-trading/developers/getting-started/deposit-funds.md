@@ -1,5 +1,11 @@
 # Deposit funds
 
+{% hint style="info" %}
+:sparkles:Pre-requisite:  You must create an account and obtain an API key via the user interface
+
+[Create account here](../../getting-started/create-account.md)
+{% endhint %}
+
 {% stepper %}
 {% step %}
 ### &#x20;Build a deposit transaction
@@ -11,7 +17,7 @@ You must first build a transaction using your current UTxO state before processi
 * For in-depth API details[build-deposit-transaction.md](../api-documentation/account/build-deposit-transaction.md "mention").&#x20;
 * For a list of supported assets, view [assets.md](../introduction/assets.md "mention")
 
-In the following example, we're depositing 10 Ada, equivalent to 10\_000\_000 lovelace
+In the following example, we're depositing 10 Ada, equivalent to `10_000_000` lovelace
 
 {% tabs %}
 {% tab title="Curl" %}
@@ -380,12 +386,6 @@ Your Response should look something like below:
 
 ```json
 [
-    {
-        "asset": "usdx",
-        "asset_unit": "5066154a102ee037390c5236f78db23239b49c5748d3d349f3ccf04b55534458",
-        "free": 0,
-        "locked": 17.35
-    },
     {
         "asset": "ada",
         "asset_unit": "",

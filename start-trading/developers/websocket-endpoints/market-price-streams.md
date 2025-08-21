@@ -1,6 +1,6 @@
 # Market price streams
 
-`/market/ws/market-price/:symbol?api_key=<your_api_key>`&#x20;
+`/market/market-price/:symbol?api_key=<your_api_key>`&#x20;
 
 ## This websocket will feed notifications for
 

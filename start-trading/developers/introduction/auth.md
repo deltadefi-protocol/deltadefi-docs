@@ -11,6 +11,6 @@ This key must be included in the headers as "X-API-KEY" for authentication.
 ```sh
 // Example snippet
 
-curl --location 'https://api-dev.deltadefi.io' \
+curl --location 'https://api-staging.deltadefi.io' \
 --header 'X-API-KEY: 4125f1d710037fd548a36123cf6dc63d'
 ```

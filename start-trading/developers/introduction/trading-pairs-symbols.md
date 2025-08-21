@@ -1,0 +1,3 @@
+# Trading Pairs / Symbols
+
+* ADAUSDM

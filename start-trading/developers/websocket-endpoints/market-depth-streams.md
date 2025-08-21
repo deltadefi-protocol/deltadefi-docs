@@ -1,6 +1,6 @@
 # Market depth streams
 
-`/market/ws/depth/:symbol?api_key=<your_api_key>`&#x20;
+`/market/depth/:symbol?api_key=<your_api_key>`&#x20;
 
 ## This websocket will feed notifications for
 
@@ -17,13 +17,20 @@
 {% tabs %}
 {% tab title="market price" %}
 ```json
-// exmaple response for market depth
 {
-  type: "Market",
-  sub_type: "market_depth",
-  side: "buy",
-  price: "0.77",
-  quantity: 120
+  "timestamp": 1755747950587,
+  "bids": [
+    {
+      "price": 0.195,
+      "quantity": 30
+    }
+  ],
+  "asks": [
+    {
+      "price": 0.3495,
+      "quantity": 50.65
+    }
+  ]
 }
 
 
