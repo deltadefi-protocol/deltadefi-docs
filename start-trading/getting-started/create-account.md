@@ -2,11 +2,28 @@
 
 Signing in is as simple as just connecting your wallet. Choose your preferred wallet and sign a message to prove your wallet ownership to sign in.
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt="" width="563"><figcaption></figcaption></figure>
 
-If it is your first-time sign-in, an account will be automatically created with a guide to make the first deposit.
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+
+
+
+If it is your first-time sign-in, you will be asked to define your trading password. \
+
+
+<figure><img src="../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+
+
+
+After setting up your trading password, you can make deposit anytime.
+
+
+
+<figure><img src="../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+
+
 
 ***
 

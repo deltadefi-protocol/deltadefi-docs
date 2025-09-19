@@ -1,10 +1,8 @@
 # Withdrawal
 
-Same as deposit, you can withdraw your assets. Upon completion, you would see the below popup.
+Withdrawal feature is currently not supported in testnet.
 
 
-
-<figure><img src="../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
 
 
 

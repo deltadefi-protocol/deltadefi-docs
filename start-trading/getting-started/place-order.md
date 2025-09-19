@@ -12,15 +12,19 @@ To place a limit order, you need to provide
 * Price
 * Order size
 
+<figure><img src="../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+
 #### Market Order
 
 To place a market order, you need to provide
 
 * Order side
 * Order size
-* Advance - maximum slippage. When there is no maximum slippage, we will try to fill your order size as much as your purchasing power can support through the order book depth.
+* Advance - limit slippage. When there is no limit set for slippage, we will try to fill your order size as much as your purchasing power can support through the order book depth.
 
-<figure><img src="../../.gitbook/assets/image (30).png" alt=""><figcaption><p>The order panel of market order and limit order</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+
+
 
 ***
 

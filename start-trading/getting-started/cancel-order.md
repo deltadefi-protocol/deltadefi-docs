@@ -1,10 +1,8 @@
 # Cancel Order
 
-You can see all the open orders in the "My Order" session, and you can cancel any open order there.
+You can see all the open orders in the "Open Order" table, and you can cancel any open order there.
 
-<figure><img src="../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
-
-
+<figure><img src="../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
 
 ***
 
