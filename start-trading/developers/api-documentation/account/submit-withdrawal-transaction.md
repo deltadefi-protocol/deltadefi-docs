@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Submit withdrawal transaction
 
 {% openapi src="../../../../.gitbook/assets/swagger (2).json" path="/accounts/withdrawal/submit" method="post" %}
