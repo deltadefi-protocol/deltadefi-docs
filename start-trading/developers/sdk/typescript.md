@@ -9,11 +9,11 @@ DeltaDeFi's Typescript SDK provides utility functions to interact with the API s
 The SDK is hosted on npmjs.com, so you can directly import it using your favorite package manager.
 
 ```
-npm i @deltadefi-protocol/typescript-sdk
+npm i @deltadefi-protocol/sdk
 ```
 
 ```
-yarn add @deltadefi-protocol/typescript-sdk
+yarn add @deltadefi-protocol/sdk
 ```
 
 ### Getting Started
@@ -22,7 +22,7 @@ Placing and canceling orders are as simple as below.
 
 ```typescript
 import { AppWalletKeyType } from '@meshsdk/core';
-import { ApiClient } from '@deltadefi-protocol/typescript-sdk';
+import { ApiClient } from '@deltadefi-protocol/sdk';
 
 // Obtain your API key through DeltaDeFi dashboard
 const apiKey = process.env.API_KEY || '';
@@ -57,6 +57,10 @@ const buildRes = await api.postOrder({
 <strong>const cancelRes = await api.orders.cancelOrder(buildRes.order.order_id);
 </strong>console.log('cancel order response', cancelRes);
 </code></pre>
+
+### SDK demo
+
+[https://github.com/deltadefi-protocol/sdks-demo](https://github.com/deltadefi-protocol/sdks-demo)
 
 
 
