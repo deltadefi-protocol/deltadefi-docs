@@ -6,7 +6,7 @@
 
 <summary>Wen launch?</summary>
 
-We expect the core feature development will be completed in 2025 Q2. A large part of the uncertainty is that we have to ensure the Hydra Head protocol is sufficiently stable to use. On that end, our team is trying our best to work closely to communicate the minimally blocking bugs/features we need to launch. Some example issues we are working on, but not limited to
+We expect the core feature development will be completed in 2025 Q3. A large part of the uncertainty is that we have to ensure the Hydra Head protocol is sufficiently stable to use. On that end, our team is trying our best to work closely to communicate the minimally blocking bugs/features we need to launch. Some example issues we are working on, but not limited to
 
 * [Networking issue between heads](https://github.com/cardano-scaling/hydra/issues/1773)
 * [Enabling withdrawal in Hydra](https://github.com/cardano-scaling/hydra/issues/1757)

@@ -70,5 +70,5 @@ console.log("Cancel Order Response:", cancelRes);
 
 ### Detailed SDK demo
 
-[https://github.com/deltadefi-protocol/sdks-demo](https://github.com/deltadefi-protocol/sdks-demo)
+[https://github.com/deltadefi-protocol/sdks-demo/tree/main/typescript](https://github.com/deltadefi-protocol/sdks-demo/tree/main/typescript)
 
