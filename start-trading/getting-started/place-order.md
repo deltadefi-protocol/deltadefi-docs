@@ -1,30 +1,15 @@
 # Place Order
 
-You can place orders through the order panel.
+You can place orders through the order panel, and there are separate
 
-### Supported Order Types
+|                          | Limit Order                   | Market Order                                                                                                                                                                                                                                          |
+| ------------------------ | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Order side (buy or sell) | :heavy\_check\_mark: Required | :heavy\_check\_mark: Required                                                                                                                                                                                                                         |
+| Price                    | :heavy\_check\_mark: Required | :heavy\_multiplication\_x: Not required                                                                                                                                                                                                               |
+| Amount (order size)      | :heavy\_check\_mark: Required | :heavy\_check\_mark: Required                                                                                                                                                                                                                         |
+| Limit slippage           | :heavy\_minus\_sign: NA       | <p><span data-gb-custom-inline data-tag="emoji" data-code="2795">➕</span> Advanced<br><br>When there is no limit set for slippage, we will try to fill your order size as much as your purchasing power can support through the order book depth.</p> |
 
-#### Limit Order
-
-To place a limit order, you need to provide
-
-* Order side
-* Price
-* Order size
-
-<figure><img src="../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
-
-#### Market Order
-
-To place a market order, you need to provide
-
-* Order side
-* Order size
-* Advance - limit slippage. When there is no limit set for slippage, we will try to fill your order size as much as your purchasing power can support through the order book depth.
-
-<figure><img src="../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
-
-
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ***
 
