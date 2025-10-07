@@ -2,6 +2,7 @@
 description: >-
   Below technical architecture illustrates the system architecture, including
   both off-chain and on-chain components of DeltaDeFi.
+hidden: true
 ---
 
 # Technical Architecture

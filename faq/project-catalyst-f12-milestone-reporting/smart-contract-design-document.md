@@ -2,6 +2,7 @@
 description: >-
   Below session illustrates the detailed logic, structure, pseudocode, and flow
   diagram of the DeltaDeFi smart contract
+hidden: true
 ---
 
 # Smart Contract Design Document

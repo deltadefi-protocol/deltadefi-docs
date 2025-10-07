@@ -2,6 +2,7 @@
 description: >-
   The pictures shown below are the user flow digram and wireframes for account
   opening, deposit, and order processing.
+hidden: true
 ---
 
 # User Flow Diagram & Wireframes

@@ -78,3 +78,4 @@
   * [Smart Contract Design Document](faq/project-catalyst-f12-milestone-reporting/smart-contract-design-document.md)
   * [Technical Architecture](faq/project-catalyst-f12-milestone-reporting/technical-architecture.md)
   * [User Flow Diagram & Wireframes](faq/project-catalyst-f12-milestone-reporting/user-flow-diagram-and-wireframes.md)
+  * [Backend and Frontend Integration Description](faq/project-catalyst-f12-milestone-reporting/backend-and-frontend-integration-description.md)
