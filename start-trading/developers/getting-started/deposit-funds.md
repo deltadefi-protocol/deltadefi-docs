@@ -15,7 +15,7 @@ You must first build a transaction using your current UTxO state before processi
 [#how-can-i-get-utxos-from-my-wallet-address](../../../faq/cardano.md#how-can-i-get-utxos-from-my-wallet-address "mention")
 
 * For in-depth API details[build-deposit-transaction.md](../api-documentation/account/build-deposit-transaction.md "mention").&#x20;
-* For a list of supported assets, view [assets.md](../introduction/assets.md "mention")
+* For a list of supported assets, view [assets.md](../assets.md "mention")
 
 In the following example, we're depositing 10 Ada, equivalent to `10_000_000` lovelace
 
@@ -401,7 +401,7 @@ Your Response should look something like below:
 
 ### Related FAQ
 
-* [How do I get my API keys?](../introduction/auth.md)
+* [How do I get my API keys?](../auth.md)
 * [What is the minimum amount of deposit and withdrawal?](../../../faq/product.md#the-minimum-deposit-amount)
 * [How long does it take to deposit & withdraw?](../../../faq/product.md#how-long-does-it-take-to-deposit-and-withdrawal)
 * [What are locked and free balances?](../../../faq/product.md#what-are-locked-and-free-balance)

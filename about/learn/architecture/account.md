@@ -22,6 +22,6 @@ After that, all the signatures needed for trading could then be obtained program
 
 ### Related FAQ
 
-* [How do I get my API keys?](../../../start-trading/developers/introduction/auth.md)
+* [How do I get my API keys?](../../../start-trading/developers/auth.md)
 * [How can I sign a Cardano transaction?](../../../faq/cardano.md#how-can-i-sign-a-cardano-transaction)
 * [How exactly is my operation key generated?](../../../faq/product.md#how-exactly-is-my-operation-key-generated)

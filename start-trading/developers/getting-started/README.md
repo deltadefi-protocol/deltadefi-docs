@@ -1,6 +1,6 @@
 # Getting started
 
-1. Connect Wallet and retrieve your api key [auth.md](../introduction/auth.md "mention")
+1. Connect Wallet and retrieve your api key [auth.md](../auth.md "mention")
 2. Test API connection
 
 {% tabs %}
