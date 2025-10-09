@@ -46,6 +46,7 @@
       * [Build withdrawal transaction](start-trading/developers/api-documentation/account/build-withdrawal-transaction.md)
       * [Submit withdrawal transaction](start-trading/developers/api-documentation/account/submit-withdrawal-transaction.md)
       * [Balances](start-trading/developers/api-documentation/account/balances.md)
+      * [Max deposit amount](start-trading/developers/api-documentation/account/max-deposit-amount.md)
     * [App](start-trading/developers/api-documentation/app/README.md)
       * [Get mock USDM (testnet only)](start-trading/developers/api-documentation/app/get-mock-usdm-testnet-only.md)
       * [Submit USDM transaction (testnet only)](start-trading/developers/api-documentation/app/submit-usdm-transaction-testnet-only.md)
