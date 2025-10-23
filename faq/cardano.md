@@ -4,7 +4,7 @@
 
 If you want to get UTxO information for testing out APIs, you can find the UTxO information from various wallet interfaces:
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Example: Getting UTxO information from Eternl wallet</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Example: Getting UTxO information from Eternl wallet</p></figcaption></figure>
 
 If you want wallet UTxO information programmatically, the UTxO type accepted by our APIs is identical to the [Mesh](https://meshjs.dev/) type (Typescript SDK) and other SIDAN Lab tool chains:
 
