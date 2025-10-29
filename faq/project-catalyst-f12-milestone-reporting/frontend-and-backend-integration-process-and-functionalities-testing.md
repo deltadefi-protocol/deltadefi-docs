@@ -6,8 +6,6 @@ description: >-
 
 # Frontend & Backend Integration Process and Functionalities Testing
 
-
-
 <details>
 
 <summary><strong>Sign in to Account</strong></summary>
@@ -16,9 +14,11 @@ After the user has pressed the connect wallet button and signed the wallet owner
 
 ### POST - SignIn (Status Code)
 
-<mark style="color:red;">To be supplemented after latest testnet deployment</mark>
+<figure><img src="../../.gitbook/assets/image (99).png" alt=""><figcaption></figcaption></figure>
 
 
+
+The `200 status code` shows the api is being called and responded successfully
 
 ### POST - SignIn (Request params)
 
@@ -74,6 +74,54 @@ The response fields are aligned with the required response fields from the backe
 
 <details>
 
+<summary>Build Deposit Transaction (Regular Deposit)</summary>
+
+After successful signin, user can press the deposit button and select the "Regular deposit" to deposit funds when next hydra open event occurs. After inputting the deposit amount per asset, the user can press confirm to build the deposit transaction.
+
+### POST - /accounts/deposit/build (Status Code)
+
+<figure><img src="../../.gitbook/assets/image (100).png" alt=""><figcaption></figcaption></figure>
+
+
+
+The `200 status code` shows the api is being called and responded successfully
+
+### POST - /accounts/deposit/build (Request params)
+
+<figure><img src="../../.gitbook/assets/image (101).png" alt=""><figcaption></figcaption></figure>
+
+
+
+The request param is aligned with the required request param from the backend API
+
+<figure><img src="../../.gitbook/assets/image (102).png" alt=""><figcaption></figcaption></figure>
+
+
+
+### POST - /accounts/deposit/build (Response)
+
+<figure><img src="../../.gitbook/assets/image (103).png" alt=""><figcaption></figcaption></figure>
+
+
+
+The response fields are aligned with the required response fields from the backend API
+
+<figure><img src="../../.gitbook/assets/image (104).png" alt=""><figcaption></figcaption></figure>
+
+
+
+</details>
+
+<details>
+
+<summary>Build Deposit Transaction (Fast Deposit)</summary>
+
+After successful signin, user can press the deposit button and select the "Fast Deposit" to deposit funds shortly with aid of an operator. After inputting the deposit amount per asset, the user can press confirm to build the deposit transaction.
+
+</details>
+
+<details>
+
 <summary>Get Deposit Records</summary>
 
 After successful signin, user can visit the dashboard page to view the deposit records. Frontend will call the GET deposit-records API to retrieve the deposit records by the user.
@@ -99,6 +147,10 @@ The deposit records shown in dashboard page are aligned with the data returned b
 
 
 </details>
+
+
+
+
 
 <details>
 
