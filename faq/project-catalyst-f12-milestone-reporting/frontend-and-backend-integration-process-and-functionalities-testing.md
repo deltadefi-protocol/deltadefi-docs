@@ -6,7 +6,7 @@ description: >-
 
 # Frontend & Backend & Smart Contract Integration Process and Functionalities Testing
 
-## Frontend & Backend Integration
+## Frontend & Backend Integration Verification
 
 <details>
 
@@ -434,7 +434,7 @@ The response field is aligned with the required response's field from the backen
 
 
 
-## Smart Contract Integration
+## Smart Contract Integration Verification
 
 To validate our scripts, user would need to make a regular deposit and assess the deposit transaction according to below steps:
 
@@ -472,7 +472,7 @@ Copy the full datum found in step 1 to [https://cardananium.github.io/cquisitor/
 
 <summary>Step 3: Cross check the script hashes shown in Cquisitor, Cardano Explorer, team's disclosed script transaction id and team's open-sourced smart contract</summary>
 
-The output's field sequence shown in the JSON in cquisitor is according to team's open-source smart contract's pub type AppOracleDatum:
+AppOracle will always be taken as the reference input in all L1 transactions to pass the validation of each script. It acts as a bridge to connect every scripts all together and shares the policyId and script address info among them. The output's field sequence shown in the JSON in cquisitor is according to team's open-source smart contract's pub type AppOracleDatum:
 
 Visit [https://github.com/deltadefi-protocol/aiken-virtual-dex/blob/staging/lib/hydra\_dex/types.ak](https://github.com/deltadefi-protocol/aiken-virtual-dex/blob/staging/lib/hydra_dex/types.ak) and locate the `pub type AppOracleDatum`:
 
@@ -495,10 +495,10 @@ pub type AppOracleDatum {
   dex_account_balance_address: Address,
   dex_order_book_token: PolicyId,
   dex_order_book_address: Address,
-  emergency_cancel_order_request_token: PolicyId,
-  emergency_cancel_order_request_address: Address,
-  emergency_withdrawal_request_token: PolicyId,
-  emergency_withdrawal_request_address: Address,
+  emergency_cancel_order_request_token: PolicyId, // Not used in MVP
+  emergency_cancel_order_request_address: Address, // Not used in MVP
+  emergency_withdrawal_request_token: PolicyId, // Not used in MVP
+  emergency_withdrawal_request_address: Address, // Not used in MVP
   all_withdrawal_script_hashes: WithdrawalScriptHashes,
   hydra_info: HydraInfo,
 }
@@ -506,14 +506,14 @@ pub type AppOracleDatum {
 
 
 
-For example, since `app_vault_address` is located as the 5th field of AppOracleDatum, it will be shown as the 4th field in the JSON outputted by cquisitor.
+For example, since `app_vault_address` is located as the 5th field of AppOracleDatum, it will be shown as the `4th field` in the JSON outputted by cquisitor.
 
 
 
-For the MVP, the team has only deployed below scripts with the corresponding ids:
+For the MVP, the team has only deployed below scripts with the corresponding `transaction hashes` :
 
 1. APPVAULT\_SPEND: `57854b8511b1a50871ca963ec484dced2e2f7f896d30151539f199009627697f`
-2. APPDEPOSITREQUEST\_MINT: `5cf70f97385098d8c4731e087b5c19d57eb5a0722020bca23c2dd500bba52bb42`
+2. APPDEPOSITREQUEST\_MINT: `cf70f97385098d8c4731e087b5c19d57eb5a0722020bca23c2dd500bba52bb42`
 3. APPDEPOSITREQUEST\_SPEND: `a7411fbcef4165796e0c8eb398fab1114b63f9919a368e1b8fb1fa80744b41b4`
 4. DEXACCOUNTBALANCE\_SPEND: `46986417bb211c7150eba6853e10ef23216712a108250b0a4a924e76be07caa4`
 5. DEXORDERBOOK\_SPEND: `1e21600cc5e1886981ce99b6fc78789634c2900abf4bc9038511cc8449a171b1`
@@ -546,3 +546,122 @@ Validated the identified script hash with the output shown in cquisitor
 
 </details>
 
+<details>
+
+<summary>Step 3.2: Verify the APPDEPOSITREQUEST_MINT script</summary>
+
+tx id:  `cf70f97385098d8c4731e087b5c19d57eb5a0722020bca23c2dd500bba52bb42`&#x20;
+
+
+
+Search the trasnaction by tx id in Cardano explorer and locate the `script hash` in Outputs
+
+<figure><img src="../../.gitbook/assets/image (105).png" alt=""><figcaption></figcaption></figure>
+
+
+
+Validated the identified script hash with the output shown in cquisitor
+
+<figure><img src="../../.gitbook/assets/image (106).png" alt=""><figcaption></figcaption></figure>
+
+</details>
+
+<details>
+
+<summary>Step 3.3: Verify the APPDEPOSITREQUEST_SPEND script</summary>
+
+Txid: `a7411fbcef4165796e0c8eb398fab1114b63f9919a368e1b8fb1fa80744b41b4`&#x20;
+
+
+
+Search the trasnaction by tx id in Cardano explorer and locate the `script hash` in Outputs
+
+<figure><img src="../../.gitbook/assets/image (107).png" alt=""><figcaption></figcaption></figure>
+
+
+
+Validated the identified script hash with the output shown in cquisitor
+
+<figure><img src="../../.gitbook/assets/image (108).png" alt=""><figcaption></figcaption></figure>
+
+</details>
+
+<details>
+
+<summary>Step 3.4: Verify the DEXACCOUNTBALANCE_SPEND script </summary>
+
+Txid: `46986417bb211c7150eba6853e10ef23216712a108250b0a4a924e76be07caa4`&#x20;
+
+
+
+Search the trasnaction by tx id in Cardano explorer and locate the `script hash` in Outputs
+
+<figure><img src="../../.gitbook/assets/image (109).png" alt=""><figcaption></figcaption></figure>
+
+
+
+Validated the identified script hash with the output shown in cquisitor
+
+<figure><img src="../../.gitbook/assets/image (110).png" alt=""><figcaption></figcaption></figure>
+
+</details>
+
+<details>
+
+<summary>Step 3.5: Verify the DEXORDERBOOK_SPEND script </summary>
+
+Txid: `1e21600cc5e1886981ce99b6fc78789634c2900abf4bc9038511cc8449a171b1`&#x20;
+
+
+
+Search the trasnaction by tx id in Cardano explorer and locate the `script hash` in Outputs
+
+<figure><img src="../../.gitbook/assets/image (112).png" alt=""><figcaption></figcaption></figure>
+
+
+
+Validated the identified script hash with the output shown in cquisitor
+
+<figure><img src="../../.gitbook/assets/image (113).png" alt=""><figcaption></figcaption></figure>
+
+</details>
+
+<details>
+
+<summary>Step 3.6: Verify the ACCOUNTOPERATION_APPDEPOSIT script</summary>
+
+Txid: `6d98e85b02713a9847c76befaef89f87480e75e136900719b5fe4ef982aba813`&#x20;
+
+
+
+Search the trasnaction by tx id in Cardano explorer and locate the `script hash` in Outputs
+
+<figure><img src="../../.gitbook/assets/image (116).png" alt=""><figcaption></figcaption></figure>
+
+
+
+Validated the identified script hash with the output shown in cquisitor
+
+<figure><img src="../../.gitbook/assets/image (118).png" alt=""><figcaption></figcaption></figure>
+
+</details>
+
+<details>
+
+<summary>Step 3.7: Verify the ACCOUNTOPERATION_APPWITHDRAWAL script</summary>
+
+Txid: `9bb2b01da61f67625f658839a49c6e869a285d65fc9437a1ce3d8c0702259183`
+
+
+
+Search the trasnaction by tx id in Cardano explorer and locate the `script hash` in Outputs
+
+<figure><img src="../../.gitbook/assets/image (119).png" alt=""><figcaption></figcaption></figure>
+
+
+
+Validated the identified script hash with the output shown in cquisitor
+
+<figure><img src="../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
+
+</details>
