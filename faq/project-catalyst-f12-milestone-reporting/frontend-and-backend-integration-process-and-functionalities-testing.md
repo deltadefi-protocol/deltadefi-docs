@@ -246,9 +246,35 @@ Continuing from the Build Request Transferral Transaction, the frontend submits 
 
 ### POST - /accounts/request-transferal/submit (Status Code)
 
+<figure><img src="../../.gitbook/assets/image (123).png" alt=""><figcaption></figcaption></figure>
 
 
 
+The `200 status code` shows the api is being called and responded successfully
+
+
+
+### POST - /accounts/transferal/submit (Request params)
+
+<figure><img src="../../.gitbook/assets/image (124).png" alt=""><figcaption></figcaption></figure>
+
+
+
+The request param is aligned with the required request param from the backend API
+
+<figure><img src="../../.gitbook/assets/image (125).png" alt=""><figcaption></figcaption></figure>
+
+
+
+### POST - /accounts/transferal/submit (Response)
+
+<figure><img src="../../.gitbook/assets/image (126).png" alt=""><figcaption></figcaption></figure>
+
+
+
+The response fields are aligned with the required response fields from the backend API
+
+<figure><img src="../../.gitbook/assets/image (127).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -284,7 +310,35 @@ The deposit records shown in dashboard page are aligned with the data returned b
 
 <details>
 
-<summary>Get Transferral Records </summary>
+<summary>Get Transferral Records (To Get Fast Deposit and Withdrawal records)</summary>
+
+After successful signin, user can visit the dashboard page to view the fast deposit records. Frontend will call the GET transferl-records API to retrieve the fast deposit records by the user.
+
+### GET - transferal-records (Status Code)
+
+<figure><img src="../../.gitbook/assets/image (128).png" alt=""><figcaption></figcaption></figure>
+
+
+
+The `200 status code` shows the api is being called and responded successfully
+
+
+
+### GET - transferal-records (Response)
+
+<figure><img src="../../.gitbook/assets/image (129).png" alt=""><figcaption></figcaption></figure>
+
+
+
+<figure><img src="../../.gitbook/assets/image (130).png" alt=""><figcaption></figcaption></figure>
+
+
+
+The transferal records shown in dashboard page are aligned with the data returned by the backend API. The backend API response fields are aligned with the required response fields from the backend API
+
+
+
+<figure><img src="../../.gitbook/assets/image (131).png" alt=""><figcaption></figcaption></figure>
 
 
 
