@@ -81,4 +81,4 @@
   * [Technical Architecture](faq/project-catalyst-f12-milestone-reporting/technical-architecture.md)
   * [User Flow Diagram & Wireframes](faq/project-catalyst-f12-milestone-reporting/user-flow-diagram-and-wireframes.md)
   * [Backend and Frontend Integration Description](faq/project-catalyst-f12-milestone-reporting/backend-and-frontend-integration-description.md)
-  * [Frontend & Backend Integration Process and Functionalities Testing](faq/project-catalyst-f12-milestone-reporting/frontend-and-backend-integration-process-and-functionalities-testing.md)
+  * [Frontend & Backend & Smart Contract Integration Process and Functionalities Testing](faq/project-catalyst-f12-milestone-reporting/frontend-and-backend-and-smart-contract-integration-process-and-functionalities-testing.md)
