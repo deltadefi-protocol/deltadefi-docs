@@ -440,7 +440,7 @@ To validate our scripts, user would need to make a regular deposit and assess th
 
 <details>
 
-<summary>Step 1: Assess the datum in Cardano explorer</summary>
+<summary>Step 1: Assess the datum in User's deposit transaction to start looking into the details of the relevant smart contracts</summary>
 
 After signing and submitting the deposit transaction, user will be able to find the deposit transaction in browser wallet (e.g. eternl, vespr, etc.). User view the deposit transaction in Cardano Explorer and browse the "Reference Input" section. Click to expand the datum information for further verification in [https://cardananium.github.io/cquisitor/](https://cardananium.github.io/cquisitor/) (A tool supporting decode by CSL to verify all involved script information)
 
@@ -513,7 +513,7 @@ For example, since `app_vault_address` is located as the 5th field of AppOracleD
 For the MVP, the team has only deployed below scripts with the corresponding ids:
 
 1. APPVAULT\_SPEND: `57854b8511b1a50871ca963ec484dced2e2f7f896d30151539f199009627697f`
-2. APPDEPOSITREQUEST\_MINT: `5``cf70f97385098d8c4731e087b5c19d57eb5a0722020bca23c2dd500bba52bb42`
+2. APPDEPOSITREQUEST\_MINT: `5cf70f97385098d8c4731e087b5c19d57eb5a0722020bca23c2dd500bba52bb42`
 3. APPDEPOSITREQUEST\_SPEND: `a7411fbcef4165796e0c8eb398fab1114b63f9919a368e1b8fb1fa80744b41b4`
 4. DEXACCOUNTBALANCE\_SPEND: `46986417bb211c7150eba6853e10ef23216712a108250b0a4a924e76be07caa4`
 5. DEXORDERBOOK\_SPEND: `1e21600cc5e1886981ce99b6fc78789634c2900abf4bc9038511cc8449a171b1`
