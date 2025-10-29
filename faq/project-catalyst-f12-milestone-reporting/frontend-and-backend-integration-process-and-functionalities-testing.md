@@ -24,7 +24,7 @@ The `200 status code` shows the api is being called and responded successfully
 
 ### POST - SignIn (Request params)
 
-<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -116,15 +116,139 @@ The response fields are aligned with the required response fields from the backe
 
 <summary>Submit Deposit Transaction (Regular Deposit)</summary>
 
-Continuing from the Build Deposit Transaction, frontend will submit the user-signed deposit transaction to the Cardano blockchain. The transaction must have been previously built using the /accounts/deposit/build endpoint and signed with the user's wallet.
+Continuing from the Build Deposit Transaction, frontend will submit the user-signed deposit transaction to the Cardano blockchain. The transaction must have been previously built using the /accounts/deposit/build endpoint and signed with the user's wallet
+
+### POST - /accounts/deposit/submit (Status Code)
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+The `200 status code` shows the api is being called and responded successfully
+
+
+
+### POST - /accounts/deposit/submit (Request params)
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+
+
+The request param is aligned with the required request param from the backend API
+
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+
+
+### POST - /accounts/deposit/submit (Response)
+
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+
+
+The response fields are aligned with the required response fields from the backend API
+
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+
+
 
 </details>
 
 <details>
 
-<summary>Build Deposit Transaction (Fast Deposit)</summary>
+<summary>Build Transferral Transaction (Fast Deposit)</summary>
 
 After successful signin, user can press the deposit button and select the "Fast Deposit" to deposit funds shortly with aid of an operator. After inputting the deposit amount per asset, the user can press confirm to build the deposit transaction.
+
+
+
+### POST - /accounts/transferal/build (Status Code)
+
+<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+
+
+
+The `200 status code` shows the api is being called and responded successfully
+
+
+
+### POST - /accounts/transferal/build (Request params)
+
+<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+
+
+
+The request param is aligned with the required request param from the backend API
+
+<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+
+
+
+### POST - /accounts/transferal/build (Response)
+
+<figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+
+
+
+The response fields are aligned with the required response fields from the backend API
+
+<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+
+
+
+</details>
+
+<details>
+
+<summary>Build Request Transferral Transaction (Fast Withdrawal)</summary>
+
+After successful signin, user can press the deposit button and select the "Fast Withdrawal" to withdrawfunds shortly with aid of an operator. After inputting the withdraw amount per asset, the user can press confirm to build the deposit transaction.
+
+
+
+### POST - /accounts/request-transferal/build (Status Code)
+
+<figure><img src="../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+
+The `200 status code` shows the api is being called and responded successfully
+
+
+
+### POST - /accounts/transferal/build (Request params)
+
+<figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+
+
+
+The request param is aligned with the required request param from the backend API
+
+<figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+
+
+
+### POST - /accounts/transferal/build (Response)
+
+<figure><img src="../../.gitbook/assets/image (121).png" alt=""><figcaption></figcaption></figure>
+
+
+
+The response fields are aligned with the required response fields from the backend API
+
+<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+
+</details>
+
+<details>
+
+<summary>Submit Request Transferral Transaction (Fast Withdrawal)</summary>
+
+Continuing from the Build Request Transferral Transaction, the frontend submits a user-signed request transferal transaction to the Cardano blockchain.&#x20;
+
+
+
+### POST - /accounts/request-transferal/submit (Status Code)
+
+
+
+
 
 </details>
 
@@ -132,31 +256,39 @@ After successful signin, user can press the deposit button and select the "Fast 
 
 <summary>Get Deposit Records</summary>
 
-After successful signin, user can visit the dashboard page to view the deposit records. Frontend will call the GET deposit-records API to retrieve the deposit records by the user.
+After successful signin, user can visit the dashboard page to view the regular deposit records. Frontend will call the GET deposit-records API to retrieve the regular deposit records by the user.
 
 ### GET - Deposit-records (Status Code)
 
-<figure><img src="../../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The `200 status code` shows the api is being called and responded successfully
 
+
+
 ### GET - Deposit-records (Response)
 
-<figure><img src="../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The deposit records shown in dashboard page are aligned with the data returned by the backend API. The backend API response fields are aligned with the required response fields from the backend API
 
-<figure><img src="../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 
 
 </details>
 
+<details>
 
+<summary>Get Transferral Records </summary>
+
+
+
+</details>
 
 <details>
 
@@ -432,6 +564,32 @@ The response field is aligned with the required response's field from the backen
 
 </details>
 
+<details>
+
+<summary>Get Withdrawal Records</summary>
+
+After successful signin, user can visit the dashboard page to view the regular withdrawal records. Frontend will call the GET withdrawal-records API to retrieve the regular withdrawal records by the user.
+
+### GET - Withdrawal-records (Status Code)
+
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+
+
+
+The `200 status code` shows the api is being called and responded successfully
+
+### GET - Withdrawal-records (Response)
+
+<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+
+The withdrawal records shown in dashboard page are aligned with the data returned by the backend API. The backend API response fields are aligned with the required response fields from the backend API
+
+<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+
+
+
+</details>
+
 
 
 ## Smart Contract Integration Verification
@@ -446,7 +604,7 @@ After signing and submitting the deposit transaction, user will be able to find 
 
 
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -462,7 +620,7 @@ Copy the full datum found in step 1 to [https://cardananium.github.io/cquisitor/
 
 
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -534,13 +692,13 @@ tx id: `57854b8511b1a50871ca963ec484dced2e2f7f896d30151539f199009627697f`&#x20;
 
 Search the trasnaction by tx id in Cardano explorer and locate the `script hash` in Outputs
 
-<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
 Validated the identified script hash with the output shown in cquisitor
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 

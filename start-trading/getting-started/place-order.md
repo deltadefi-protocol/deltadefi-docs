@@ -9,7 +9,7 @@ You can place orders through the order panel, and there are separate
 | Amount (order size)      | :heavy\_check\_mark: Required | :heavy\_check\_mark: Required                                                                                                                                                                                                                         |
 | Limit slippage           | :heavy\_minus\_sign: NA       | <p><span data-gb-custom-inline data-tag="emoji" data-code="2795">➕</span> Advanced<br><br>When there is no limit set for slippage, we will try to fill your order size as much as your purchasing power can support through the order book depth.</p> |
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ***
 

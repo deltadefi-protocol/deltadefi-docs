@@ -11,7 +11,7 @@ hidden: true
 
 Below system architecture illustrates both off-chain and on-chain components of DeltaDeFi. As shown in the architecture, only the matched orders will be submitted to blockchain, causing transaction fee. Otherwise, there will be no transaction fee caused for any order creation, modification, and cancellation. Immediate order response will be provided to user as well. The whole offchain part is below hosted in AWS cloud as shown in the diagram below while the interaction with the public blockchain is via cardano node API services.
 
-<figure><img src="../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
