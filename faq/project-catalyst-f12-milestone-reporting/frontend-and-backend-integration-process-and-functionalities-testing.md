@@ -658,9 +658,7 @@ After signing and submitting the deposit transaction, user will be able to find 
 
 
 
-<figure><img src="../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
-
-
+<figure><img src="../../.gitbook/assets/image (132).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -674,9 +672,7 @@ Copy the full datum found in step 1 to [https://cardananium.github.io/cquisitor/
 
 
 
-<figure><img src="../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
-
-
+<figure><img src="../../.gitbook/assets/image (133).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -724,13 +720,13 @@ For example, since `app_vault_address` is located as the 5th field of AppOracleD
 
 For the MVP, the team has only deployed below scripts with the corresponding `transaction hashes` :
 
-1. APPVAULT\_SPEND: `57854b8511b1a50871ca963ec484dced2e2f7f896d30151539f199009627697f`
-2. APPDEPOSITREQUEST\_MINT: `cf70f97385098d8c4731e087b5c19d57eb5a0722020bca23c2dd500bba52bb42`
-3. APPDEPOSITREQUEST\_SPEND: `a7411fbcef4165796e0c8eb398fab1114b63f9919a368e1b8fb1fa80744b41b4`
-4. DEXACCOUNTBALANCE\_SPEND: `46986417bb211c7150eba6853e10ef23216712a108250b0a4a924e76be07caa4`
-5. DEXORDERBOOK\_SPEND: `1e21600cc5e1886981ce99b6fc78789634c2900abf4bc9038511cc8449a171b1`
-6. ACCOUNTOPERATION\_APPDEPOSIT: `6d98e85b02713a9847c76befaef89f87480e75e136900719b5fe4ef982aba813`
-7. ACCOUNTOPERATION\_APPWITHDRAWAL: `9bb2b01da61f67625f658839a49c6e869a285d65fc9437a1ce3d8c0702259183`
+1. APPVAULT\_SPEND:   `03fadf38750b7c90902286e083924b8837c86ee96e54d82dc101a15701f5ebc1`
+2. APPDEPOSITREQUEST\_MINT: `d4dc6ca99616a73edafa77602f33670a58f4fe61b76a043307efad9dba90dc5c`
+3. APPDEPOSITREQUEST\_SPEND:  `f952a21d49443c13a63ea5ecf9f22fa8d16337c468fbf58e31f6f73fa2dfec9b`
+4. DEXACCOUNTBALANCE\_SPEND:  `5fde15ee7dbee50dbdea46fcff34700810cee3260eb1c78a6375ae804b4c8bd4`
+5. DEXORDERBOOK\_SPEND:  `3798b056eecd06f7ce900b8d332f4b236a112176aefb053d6aebc30775decb11`
+6. ACCOUNTOPERATION\_APPDEPOSIT:  `f2279a6f91f2341f88e512ca56d190badfeac7e7a52812855464f03ed8662114`
+7. ACCOUNTOPERATION\_APPWITHDRAWAL: `de545edb93fc67d47a7b7b5c734dcd23a46fc205b6350930ddd9e578d21f49b2`
 
 
 
@@ -740,19 +736,23 @@ For the MVP, the team has only deployed below scripts with the corresponding `tr
 
 <summary>Step 3.1: Verify the APPVAULT_SPEND script</summary>
 
-tx id: `57854b8511b1a50871ca963ec484dced2e2f7f896d30151539f199009627697f`&#x20;
+tx id: `03fadf38750b7c90902286e083924b8837c86ee96e54d82dc101a15701f5ebc1`&#x20;
 
 
 
 Search the trasnaction by tx id in Cardano explorer and locate the `script hash` in Outputs
 
-<figure><img src="../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
+
+
+<figure><img src="../../.gitbook/assets/image (134).png" alt=""><figcaption></figcaption></figure>
 
 
 
 Validated the identified script hash with the output shown in cquisitor
 
-<figure><img src="../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
+
+
+<figure><img src="../../.gitbook/assets/image (135).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -762,19 +762,19 @@ Validated the identified script hash with the output shown in cquisitor
 
 <summary>Step 3.2: Verify the APPDEPOSITREQUEST_MINT script</summary>
 
-tx id:  `cf70f97385098d8c4731e087b5c19d57eb5a0722020bca23c2dd500bba52bb42`&#x20;
+tx id:  `d4dc6ca99616a73edafa77602f33670a58f4fe61b76a043307efad9dba90dc5c`&#x20;
 
 
 
 Search the trasnaction by tx id in Cardano explorer and locate the `script hash` in Outputs
 
-<figure><img src="../../.gitbook/assets/image (105).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (136).png" alt=""><figcaption></figcaption></figure>
 
 
 
 Validated the identified script hash with the output shown in cquisitor
 
-<figure><img src="../../.gitbook/assets/image (106).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (137).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -782,19 +782,21 @@ Validated the identified script hash with the output shown in cquisitor
 
 <summary>Step 3.3: Verify the APPDEPOSITREQUEST_SPEND script</summary>
 
-Txid: `a7411fbcef4165796e0c8eb398fab1114b63f9919a368e1b8fb1fa80744b41b4`&#x20;
+Txid: `f952a21d49443c13a63ea5ecf9f22fa8d16337c468fbf58e31f6f73fa2dfec9b`&#x20;
 
 
 
 Search the trasnaction by tx id in Cardano explorer and locate the `script hash` in Outputs
 
-<figure><img src="../../.gitbook/assets/image (107).png" alt=""><figcaption></figcaption></figure>
+
+
+<figure><img src="../../.gitbook/assets/image (138).png" alt=""><figcaption></figcaption></figure>
 
 
 
 Validated the identified script hash with the output shown in cquisitor
 
-<figure><img src="../../.gitbook/assets/image (108).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (139).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -802,19 +804,21 @@ Validated the identified script hash with the output shown in cquisitor
 
 <summary>Step 3.4: Verify the DEXACCOUNTBALANCE_SPEND script </summary>
 
-Txid: `46986417bb211c7150eba6853e10ef23216712a108250b0a4a924e76be07caa4`&#x20;
+Txid: `5fde15ee7dbee50dbdea46fcff34700810cee3260eb1c78a6375ae804b4c8bd4`
 
 
 
 Search the trasnaction by tx id in Cardano explorer and locate the `script hash` in Outputs
 
-<figure><img src="../../.gitbook/assets/image (109).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (140).png" alt=""><figcaption></figcaption></figure>
 
 
 
 Validated the identified script hash with the output shown in cquisitor
 
-<figure><img src="../../.gitbook/assets/image (110).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (141).png" alt=""><figcaption></figcaption></figure>
+
+
 
 </details>
 
@@ -822,19 +826,19 @@ Validated the identified script hash with the output shown in cquisitor
 
 <summary>Step 3.5: Verify the DEXORDERBOOK_SPEND script </summary>
 
-Txid: `1e21600cc5e1886981ce99b6fc78789634c2900abf4bc9038511cc8449a171b1`&#x20;
+Txid: `3798b056eecd06f7ce900b8d332f4b236a112176aefb053d6aebc30775decb11`
 
 
 
 Search the trasnaction by tx id in Cardano explorer and locate the `script hash` in Outputs
 
-<figure><img src="../../.gitbook/assets/image (112).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (142).png" alt=""><figcaption></figcaption></figure>
 
 
 
 Validated the identified script hash with the output shown in cquisitor
 
-<figure><img src="../../.gitbook/assets/image (113).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (143).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -842,19 +846,21 @@ Validated the identified script hash with the output shown in cquisitor
 
 <summary>Step 3.6: Verify the ACCOUNTOPERATION_APPDEPOSIT script</summary>
 
-Txid: `6d98e85b02713a9847c76befaef89f87480e75e136900719b5fe4ef982aba813`&#x20;
+Txid: `f2279a6f91f2341f88e512ca56d190badfeac7e7a52812855464f03ed8662114`
 
 
 
 Search the trasnaction by tx id in Cardano explorer and locate the `script hash` in Outputs
 
-<figure><img src="../../.gitbook/assets/image (116).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (144).png" alt=""><figcaption></figcaption></figure>
 
 
 
 Validated the identified script hash with the output shown in cquisitor
 
-<figure><img src="../../.gitbook/assets/image (118).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (145).png" alt=""><figcaption></figcaption></figure>
+
+
 
 </details>
 
@@ -862,18 +868,18 @@ Validated the identified script hash with the output shown in cquisitor
 
 <summary>Step 3.7: Verify the ACCOUNTOPERATION_APPWITHDRAWAL script</summary>
 
-Txid: `9bb2b01da61f67625f658839a49c6e869a285d65fc9437a1ce3d8c0702259183`
+Txid: `de545edb93fc67d47a7b7b5c734dcd23a46fc205b6350930ddd9e578d21f49b2`
 
 
 
 Search the trasnaction by tx id in Cardano explorer and locate the `script hash` in Outputs
 
-<figure><img src="../../.gitbook/assets/image (119).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (146).png" alt=""><figcaption></figcaption></figure>
 
 
 
 Validated the identified script hash with the output shown in cquisitor
 
-<figure><img src="../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (147).png" alt=""><figcaption></figcaption></figure>
 
 </details>
