@@ -24,7 +24,7 @@
   sub_type: "balance",
   balance: [
     {
-        "asset": "usdx",
+        "asset": "usdm",
         "asset_unit": "5066154a102ee037390c5236f78db23239b49c5748d3d349f3ccf04b55534458",
         "free": 1153.006812,
         "locked": 0

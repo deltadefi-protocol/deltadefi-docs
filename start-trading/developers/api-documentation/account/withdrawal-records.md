@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Withdrawal records
 
 {% openapi src="../../../../.gitbook/assets/swagger (2).json" path="/accounts/withdrawal-records" method="get" %}

@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Deposit records
 
 {% openapi src="../../../../.gitbook/assets/swagger (1).json" path="/accounts/deposit-records" method="get" %}

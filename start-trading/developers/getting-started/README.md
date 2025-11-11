@@ -6,7 +6,7 @@
 {% tabs %}
 {% tab title="curl" %}
 ```powershell
-curl --location 'https://api-staging.deltadefi.io/accounts/balance' \
+curl --location 'https://api.deltadefi.io/accounts/balance' \
 --header 'X-API-KEY: <your_api_key>'
 ```
 

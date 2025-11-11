@@ -11,7 +11,7 @@ For in-depth API details [build-cancel-order-transaction.md](../api-documentatio
 {% tabs %}
 {% tab title="Curl" %}
 ```sh
-curl --location --request DELETE 'https://api-staging.deltadefi.io/order/fdcd1b64-504f-4504-8000-61b3306f345b/build' \
+curl --location --request DELETE 'https://api.deltadefi.io/order/fdcd1b64-504f-4504-8000-61b3306f345b/build' \
 --header 'x-api-key: <your_api_key>' \
 --data ''
 ```
@@ -25,7 +25,7 @@ let data = '';
 let config = {
   method: 'delete',
   maxBodyLength: Infinity,
-  url: 'https://api-staging.deltadefi.io/order/fdcd1b64-504f-4504-8000-61b3306f345b/build',
+  url: 'https://api.deltadefi.io/order/fdcd1b64-504f-4504-8000-61b3306f345b/build',
   headers: { 
     'x-api-key': '<your_api_key>'
   },
@@ -58,7 +58,7 @@ import (
 
 func main() {
 
-  url := "https://api-staging.deltadefi.io/order/fdcd1b64-504f-4504-8000-61b3306f345b/build"
+  url := "https://api.deltadefi.io/order/fdcd1b64-504f-4504-8000-61b3306f345b/build"
   method := "DELETE"
 
   payload := strings.NewReader(``)
@@ -106,7 +106,7 @@ For in-depth API details [submit-cancel-order-transaction.md](../api-documentati
 {% tabs %}
 {% tab title="Curl" %}
 ```sh
-curl --location --request DELETE 'https://api-staging.deltadefi.io/order/submit' \
+curl --location --request DELETE 'https://api.deltadefi.io/order/submit' \
 --header 'x-api-key: <your_api_key>' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -125,7 +125,7 @@ let data = JSON.stringify({
 let config = {
   method: 'delete',
   maxBodyLength: Infinity,
-  url: 'https://api-staging.deltadefi.io/order/submit',
+  url: 'https://api.deltadefi.io/order/submit',
   headers: { 
     'x-api-key': '<your_api_key>', 
     'Content-Type': 'application/json'
@@ -159,7 +159,7 @@ import (
 
 func main() {
 
-  url := "https://api-staging.deltadefi.io/order/submit"
+  url := "https://api.deltadefi.io/order/submit"
   method := "DELETE"
 
   payload := strings.NewReader(`{
