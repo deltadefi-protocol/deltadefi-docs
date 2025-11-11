@@ -124,7 +124,7 @@ func main() {
     return
   }
   fmt.Println(string(body))
-}
+
 ```
 {% endtab %}
 {% endtabs %}

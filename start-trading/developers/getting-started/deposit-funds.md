@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Deposit funds
 
 {% hint style="info" %}
@@ -22,7 +26,7 @@ In the following example, we're depositing 10 Ada, equivalent to `10_000_000` lo
 {% tabs %}
 {% tab title="Curl" %}
 ```sh
-curl --location 'https://api-staging.deltadefi.io/accounts/deposit/build' \
+curl --location 'https://api.deltadefi.io/accounts/deposit/build' \
 --header 'x-api-key: <your_api_key>' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -95,7 +99,7 @@ let data = JSON.stringify({
 let config = {
   method: 'post',
   maxBodyLength: Infinity,
-  url: 'https://api-staging.deltadefi.io/accounts/deposit/build',
+  url: 'https://api.deltadefi.io/accounts/deposit/build',
   headers: { 
     'X-API-KEY': '<your_api_key>', 
     'Content-Type': 'application/json'
@@ -110,80 +114,6 @@ axios.request(config)
 .catch((error) => {
   console.log(error);
 });
-```
-{% endtab %}
-
-{% tab title="Go" %}
-```go
-package main
-
-import (
-  "fmt"
-  "strings"
-  "net/http"
-  "io"
-)
-
-func main() {
-
-  url := "https://api-staging.deltadefi.io/accounts/deposit/build"
-  method := "POST"
-
-  payload := strings.NewReader(`{
-    "deposit_amount": [
-        {
-            "unit": "lovelace",
-            "quantity": "10000000"
-        }
-    ], 
-    "input_utxos": [
-        {
-            "input": {
-                "tx_hash": "6a33db7b4da84707b088d29fd6ec3072f03599427a4854c7ebe88c3052524385",
-                "output_index": 4
-            },
-            "output": {
-                "address": "addr_test1qr77kjlsarq8wy22g4flrcznjh5lkug5mvth7qhhkewgmezwvc8hnnjzy82j5twzf8dfy5gjk04yd09t488ys9605dvq4ymc4x",
-                "amount": [
-                    {
-                        "unit": "lovelace",
-                        "quantity": "77261137"
-                    }
-                ],
-                "data_hash": null,
-                "plutus_data": null,
-                "script_ref": null,
-                "script_hash": null
-            }
-        }
-    ]
-}`)
-
-  client := &http.Client {
-  }
-  req, err := http.NewRequest(method, url, payload)
-
-  if err != nil {
-    fmt.Println(err)
-    return
-  }
-  req.Header.Add("X-API-KEY", "<your_api_key>")
-  req.Header.Add("Content-Type", "application/json")
-
-  res, err := client.Do(req)
-  if err != nil {
-    fmt.Println(err)
-    return
-  }
-  defer res.Body.Close()
-
-  body, err := io.ReadAll(res.Body)
-  if err != nil {
-    fmt.Println(err)
-    return
-  }
-  fmt.Println(string(body))
-}
 ```
 {% endtab %}
 {% endtabs %}
@@ -202,7 +132,7 @@ For in-depth API details [submit-deposit-transaction.md](../api-documentation/ac
 {% tab title="curl" %}
 ```sh
 
-curl --location 'https://api-staging.deltadefi.io/accounts/deposit/submit' \
+curl --location 'https://api.deltadefi.io/accounts/deposit/submit' \
 --header 'X-API-key: <your_api_key>' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -224,7 +154,7 @@ let data = JSON.stringify({
 let config = {
   method: 'post',
   maxBodyLength: Infinity,
-  url: 'https://api-staging.deltadefi.io/accounts/deposit/submit',
+  url: 'https://api.deltadefi.io/accounts/deposit/submit',
   headers: { 
     'X-API-key': '<your_api_key>', 
     'Content-Type': 'application/json'
@@ -257,7 +187,7 @@ import (
 
 func main() {
 
-  url := "https://api-staging.deltadefi.io/accounts/deposit/submit"
+  url := "https://api.deltadefi.io/accounts/deposit/submit"
   method := "POST"
 
   payload := strings.NewReader(`{
@@ -304,7 +234,7 @@ After you have made a successful deposit request, you can check your latest acco
 {% tabs %}
 {% tab title="curl" %}
 ```sh
-curl --location 'https://api-staging.deltadefi.io/accounts/balance' \
+curl --location 'https://api.deltadefi.io/accounts/balance' \
 --header 'X-API-KEY: <your_api_key>'
 ```
 
@@ -318,7 +248,7 @@ const axios = require('axios');
 let config = {
   method: 'get',
   maxBodyLength: Infinity,
-  url: 'https://api-staging.deltadefi.io/accounts/balance',
+  url: 'https://api.deltadefi.io/accounts/balance',
   headers: { 
     'X-API-KEY': '<your_api_key>'
   }
@@ -349,7 +279,7 @@ import (
 
 func main() {
 
-  url := "https://api-staging.deltadefi.io/accounts/balance"
+  url := "https://api.deltadefi.io/accounts/balance"
   method := "GET"
 
   client := &http.Client {

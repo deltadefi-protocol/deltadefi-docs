@@ -31,6 +31,7 @@
   * [Status code](start-trading/developers/status-code.md)
   * [Getting started](start-trading/developers/getting-started/README.md)
     * [Deposit funds](start-trading/developers/getting-started/deposit-funds.md)
+    * [Verifying account balance](start-trading/developers/getting-started/verifying-account-balance.md)
     * [Place a new order](start-trading/developers/getting-started/place-a-new-order.md)
     * [Cancel an order](start-trading/developers/getting-started/cancel-an-order.md)
     * [Withdraw funds](start-trading/developers/getting-started/withdraw-funds.md)
