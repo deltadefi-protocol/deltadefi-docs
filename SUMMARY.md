@@ -12,7 +12,6 @@
     * [Order Book](about/learn/architecture/order-book.md)
   * [Trade](about/learn/trade/README.md)
     * [Order Types](about/learn/trade/order-types.md)
-    * [Fee](about/learn/trade/fee.md)
   * [Whitepaper](about/learn/whitepaper.md)
 
 ## Start Trading
@@ -24,6 +23,7 @@
   * [Cancel Order](start-trading/getting-started/cancel-order.md)
   * [Withdrawal](start-trading/getting-started/withdrawal.md)
   * [API Key / Dashboard](start-trading/getting-started/api-key-dashboard.md)
+  * [Fee](start-trading/getting-started/fee.md)
 * [⚙️ Developers](start-trading/developers/README.md)
   * [Base Url](start-trading/developers/base-url.md)
   * [Auth](start-trading/developers/auth.md)
