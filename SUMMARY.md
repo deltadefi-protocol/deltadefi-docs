@@ -70,9 +70,9 @@
     * [Account streams](start-trading/developers/websocket-endpoints/account-streams.md)
     * [Market price streams](start-trading/developers/websocket-endpoints/market-price-streams.md)
     * [Market depth streams](start-trading/developers/websocket-endpoints/market-depth-streams.md)
-  * [SDK](start-trading/developers/sdk/README.md)
-    * [Typescript](start-trading/developers/sdk/typescript.md)
-    * [Python](start-trading/developers/sdk/python.md)
+  * [SDKs](start-trading/developers/sdks/README.md)
+    * [Typescript](start-trading/developers/sdks/typescript.md)
+    * [Python](start-trading/developers/sdks/python.md)
 
 ## FAQ
 
