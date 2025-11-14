@@ -12,6 +12,7 @@
     * [Order Book](about/learn/architecture/order-book.md)
   * [Trade](about/learn/trade/README.md)
     * [Order Types](about/learn/trade/order-types.md)
+    * [Fee](about/learn/trade/fee.md)
   * [Whitepaper](about/learn/whitepaper.md)
 
 ## Start Trading
