@@ -2,19 +2,73 @@
 
 Get all supported trading pairs and assets with their metadata. This endpoint provides essential information for trading including token decimals, symbols, and trading pair configurations.
 
-```json
-{"openapi":"3.1.1","info":{"title":"Espresso API Server","version":"1.0"},"paths":{"/app/market-config":{"get":{"description":"Get all supported trading pairs and assets with their metadata","responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"$ref":"#/components/schemas/GetMarketConfigResponse"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ErrorJSONWithCodeResponse"}}}}},"summary":"Get market configuration","tags":["app"]}}},"components":{"schemas":{"GetMarketConfigResponse":{"properties":{"assets":{"items":{"$ref":"#/components/schemas/MarketConfigAsset"},"type":"array"},"trading_pairs":{"items":{"$ref":"#/components/schemas/MarketConfigTradingPair"},"type":"array"}},"type":"object"},"MarketConfigAsset":{"properties":{"symbol":{"type":"string","description":"Asset symbol (e.g., ADA, USDM)"},"unit":{"type":"string","description":"Asset unit/policy ID (e.g., lovelace)"},"decimals":{"type":"integer","description":"Number of decimal places"},"max_qty_dp":{"type":"integer","description":"Maximum decimal places for quantity input"},"trading_pairs":{"items":{"type":"string"},"type":"array","description":"Trading pairs this asset is part of"}},"type":"object"},"MarketConfigTradingPair":{"properties":{"symbol":{"type":"string","description":"Trading pair symbol (e.g., ADAUSDM)"},"base_token":{"$ref":"#/components/schemas/MarketConfigToken"},"quote_token":{"$ref":"#/components/schemas/MarketConfigToken"},"price_max_dp":{"type":"integer","description":"Maximum decimal places for price"}},"type":"object"},"MarketConfigToken":{"properties":{"symbol":{"type":"string"},"unit":{"type":"string"},"decimals":{"type":"integer"},"max_qty_dp":{"type":"integer"}},"type":"object"},"ErrorJSONWithCodeResponse":{"properties":{"code":{"type":"integer"},"error":{"type":"string"}},"type":"object"}}}}
+{% tabs %}
+{% tab title="Curl" %}
+```sh
+curl --location 'https://api.deltadefi.io/app/market-config'
 ```
+{% endtab %}
 
-## Example
+{% tab title="NodeJs (axios)" %}
+```javascript
+const axios = require('axios');
 
-### Request
+let config = {
+  method: 'get',
+  maxBodyLength: Infinity,
+  url: 'https://api.deltadefi.io/app/market-config'
+};
 
-```bash
-curl -X GET "https://api.deltadefi.io/app/market-config"
+axios.request(config)
+.then((response) => {
+  console.log(JSON.stringify(response.data));
+})
+.catch((error) => {
+  console.log(error);
+});
 ```
+{% endtab %}
 
-### Response
+{% tab title="Go" %}
+```go
+package main
+
+import (
+  "fmt"
+  "net/http"
+  "io"
+)
+
+func main() {
+  url := "https://api.deltadefi.io/app/market-config"
+  method := "GET"
+
+  client := &http.Client{}
+  req, err := http.NewRequest(method, url, nil)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+
+  res, err := client.Do(req)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  defer res.Body.Close()
+
+  body, err := io.ReadAll(res.Body)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  fmt.Println(string(body))
+}
+```
+{% endtab %}
+{% endtabs %}
+
+**Response:**
 
 ```json
 {
@@ -55,24 +109,32 @@ curl -X GET "https://api.deltadefi.io/app/market-config"
 }
 ```
 
+---
+
 ## Understanding the Response
 
 ### Assets
 
 Each asset includes:
-- **symbol**: Human-readable asset name
-- **unit**: On-chain asset identifier (policy ID + asset name, or "lovelace" for ADA)
-- **decimals**: Number of decimal places for the token on-chain
-- **max_qty_dp**: Maximum decimal places allowed for quantity inputs
-- **trading_pairs**: List of trading pairs this asset is involved in
+
+| Field | Type | Description |
+|-------|------|-------------|
+| symbol | string | Human-readable asset name (e.g., ADA, USDM) |
+| unit | string | On-chain asset identifier (policy ID + asset name, or "lovelace" for ADA) |
+| decimals | integer | Number of decimal places for the token on-chain |
+| max_qty_dp | integer | Maximum decimal places allowed for quantity inputs |
+| trading_pairs | array | List of trading pairs this asset is involved in |
 
 ### Trading Pairs
 
 Each trading pair includes:
-- **symbol**: Trading pair identifier (e.g., "ADAUSDM")
-- **base_token**: The base asset (what you're buying/selling)
-- **quote_token**: The quote asset (what you're pricing in)
-- **price_max_dp**: Maximum decimal places for price inputs
+
+| Field | Type | Description |
+|-------|------|-------------|
+| symbol | string | Trading pair identifier (e.g., "ADAUSDM") |
+| base_token | object | The base asset (what you're buying/selling) |
+| quote_token | object | The quote asset (what you're pricing in) |
+| price_max_dp | integer | Maximum decimal places for price inputs |
 
 {% hint style="info" %}
 Use this endpoint to dynamically discover available trading pairs and properly format quantities and prices in your trading application.
