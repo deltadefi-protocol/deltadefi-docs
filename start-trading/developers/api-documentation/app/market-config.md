@@ -1,6 +1,12 @@
-# Market Configuration
+# Market config
 
 Get all supported trading pairs and assets with their metadata. This endpoint provides essential information for trading including token decimals, symbols, and trading pair configurations.
+
+
+
+{% openapi-operation spec="V13" path="/app/market-config" method="get" %}
+[OpenAPI V13](https://4401d86825a13bf607936cc3a9f3897a.r2.cloudflarestorage.com/gitbook-x-prod-openapi/raw/146df47964f80e2dc987856ffff1fb5c47812bac51e24beb8afdb298326dded0.json?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=dce48141f43c0191a2ad043a6888781c%2F20260113%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260113T061700Z&X-Amz-Expires=172800&X-Amz-Signature=00d2e7544274011ea4c82020135d2ddeeede9898b97ebef7d5a557bec017afbe&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+{% endopenapi-operation %}
 
 {% tabs %}
 {% tab title="Curl" %}
@@ -109,7 +115,7 @@ func main() {
 }
 ```
 
----
+***
 
 ## Understanding the Response
 
@@ -117,24 +123,24 @@ func main() {
 
 Each asset includes:
 
-| Field | Type | Description |
-|-------|------|-------------|
-| symbol | string | Human-readable asset name (e.g., ADA, USDM) |
-| unit | string | On-chain asset identifier (policy ID + asset name, or "lovelace" for ADA) |
-| decimals | integer | Number of decimal places for the token on-chain |
-| max_qty_dp | integer | Maximum decimal places allowed for quantity inputs |
-| trading_pairs | array | List of trading pairs this asset is involved in |
+| Field          | Type    | Description                                                               |
+| -------------- | ------- | ------------------------------------------------------------------------- |
+| symbol         | string  | Human-readable asset name (e.g., ADA, USDM)                               |
+| unit           | string  | On-chain asset identifier (policy ID + asset name, or "lovelace" for ADA) |
+| decimals       | integer | Number of decimal places for the token on-chain                           |
+| max\_qty\_dp   | integer | Maximum decimal places allowed for quantity inputs                        |
+| trading\_pairs | array   | List of trading pairs this asset is involved in                           |
 
 ### Trading Pairs
 
 Each trading pair includes:
 
-| Field | Type | Description |
-|-------|------|-------------|
-| symbol | string | Trading pair identifier (e.g., "ADAUSDM") |
-| base_token | object | The base asset (what you're buying/selling) |
-| quote_token | object | The quote asset (what you're pricing in) |
-| price_max_dp | integer | Maximum decimal places for price inputs |
+| Field          | Type    | Description                                 |
+| -------------- | ------- | ------------------------------------------- |
+| symbol         | string  | Trading pair identifier (e.g., "ADAUSDM")   |
+| base\_token    | object  | The base asset (what you're buying/selling) |
+| quote\_token   | object  | The quote asset (what you're pricing in)    |
+| price\_max\_dp | integer | Maximum decimal places for price inputs     |
 
 {% hint style="info" %}
 Use this endpoint to dynamically discover available trading pairs and properly format quantities and prices in your trading application.

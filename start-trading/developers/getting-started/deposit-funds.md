@@ -122,7 +122,7 @@ With the returned <mark style="color:orange;">`tx_hex`</mark> from step 1, you w
 
 [#how-can-i-sign-a-cardano-transaction](../../../faq/cardano.md#how-can-i-sign-a-cardano-transaction "mention")
 
-For in-depth API details [submit-deposit-transaction.md](../api-documentation/submit-deposit-transaction.md "mention")
+For in-depth API details [submit-deposit-transaction.md](../api-documentation/account/submit-deposit-transaction.md "mention")
 
 {% tabs %}
 {% tab title="curl" %}
