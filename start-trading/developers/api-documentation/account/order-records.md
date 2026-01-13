@@ -6,30 +6,413 @@ This page documents the endpoints for retrieving order information.
 
 Get open orders for the authenticated user with pagination. Quantities are returned in human-readable format adjusted for token decimals.
 
-```json
-{"openapi":"3.1.1","info":{"title":"Espresso API Server","version":"1.0"},"security":[{"ApiKeyAuth":[]}],"paths":{"/accounts/open-orders":{"get":{"description":"Get open orders for the authenticated user with pagination. Quantities are returned in human-readable format adjusted for token decimals.","parameters":[{"schema":{"type":"string"},"description":"API Key","in":"header","name":"X-API-KEY","required":true},{"schema":{"type":"string"},"description":"Trading pair symbol","in":"query","name":"symbol","required":true},{"schema":{"type":"integer"},"description":"Page number for pagination, default is 1","in":"query","name":"page"},{"schema":{"type":"integer"},"description":"Limit number of records per page, default is 10","in":"query","name":"limit"}],"responses":{"200":{"description":"Paginated open orders with decimal-adjusted quantities","content":{"application/json":{"schema":{"$ref":"#/components/schemas/PaginatedOrderResponse"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ErrorJSONWithCodeResponse"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ErrorJSONWithCodeResponse"}}}},"422":{"description":"Unprocessable Entity","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ErrorJSONWithCodeResponse"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ErrorJSONWithCodeResponse"}}}}},"summary":"Get open orders","tags":["accounts"]}}},"components":{"schemas":{"PaginatedOrderResponse":{"properties":{"data":{"items":{"$ref":"#/components/schemas/OrderResponse"},"type":"array"},"total_count":{"type":"integer"},"total_page":{"type":"integer"}},"type":"object"},"OrderResponse":{"properties":{"account_id":{"type":"string"},"id":{"type":"string"},"symbol":{"type":"string"},"side":{"type":"string","enum":["buy","sell"]},"type":{"type":"string","enum":["market","limit"]},"status":{"type":"string","enum":["building","processing","open","closed","failed","cancelled"]},"price":{"type":"string"},"base_qty":{"type":"string"},"quote_qty":{"type":"string"},"executed_base_qty":{"type":"string"},"executed_quote_qty":{"type":"string"},"executed_price":{"type":"string"},"commission":{"type":"string"},"commission_unit":{"type":"string"},"commission_rate_bp":{"type":"integer"},"slippage_bp":{"type":"integer"},"created_at":{"type":"string"},"updated_at":{"type":"string"},"order_execution_records":{"items":{"$ref":"#/components/schemas/OrderExecutionRecordResponse"},"type":"array"}},"type":"object"},"OrderExecutionRecordResponse":{"properties":{"id":{"type":"string"},"order_id":{"type":"string"},"account_id":{"type":"string"},"counter_party_order_id":{"type":"string"},"execution_price":{"type":"string"},"filled_base_qty":{"type":"string"},"filled_quote_qty":{"type":"string"},"commission":{"type":"string"},"commission_unit":{"type":"string"},"role":{"type":"string","enum":["maker","taker"]},"created_at":{"type":"string"}},"type":"object"},"ErrorJSONWithCodeResponse":{"properties":{"code":{"type":"integer"},"error":{"type":"string"}},"type":"object"}}}}
+{% tabs %}
+{% tab title="Curl" %}
+```sh
+curl --location 'https://api.deltadefi.io/accounts/open-orders?symbol=ADAUSDX&page=1&limit=10' \
+--header 'X-API-KEY: <your_api_key>'
 ```
+{% endtab %}
+
+{% tab title="NodeJs (axios)" %}
+```javascript
+const axios = require('axios');
+
+let config = {
+  method: 'get',
+  maxBodyLength: Infinity,
+  url: 'https://api.deltadefi.io/accounts/open-orders?symbol=ADAUSDX&page=1&limit=10',
+  headers: { 
+    'X-API-KEY': '<your_api_key>'
+  }
+};
+
+axios.request(config)
+.then((response) => {
+  console.log(JSON.stringify(response.data));
+})
+.catch((error) => {
+  console.log(error);
+});
+```
+{% endtab %}
+
+{% tab title="Go" %}
+```go
+package main
+
+import (
+  "fmt"
+  "net/http"
+  "io"
+)
+
+func main() {
+  url := "https://api.deltadefi.io/accounts/open-orders?symbol=ADAUSDX&page=1&limit=10"
+  method := "GET"
+
+  client := &http.Client{}
+  req, err := http.NewRequest(method, url, nil)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  req.Header.Add("X-API-KEY", "<your_api_key>")
+
+  res, err := client.Do(req)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  defer res.Body.Close()
+
+  body, err := io.ReadAll(res.Body)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  fmt.Println(string(body))
+}
+```
+{% endtab %}
+{% endtabs %}
+
+**Response:**
+
+```json
+{
+  "data": [
+    {
+      "id": "order_123",
+      "account_id": "acc_456",
+      "symbol": "ADAUSDX",
+      "side": "buy",
+      "type": "limit",
+      "status": "open",
+      "price": "0.93",
+      "base_qty": "100",
+      "quote_qty": "93",
+      "executed_base_qty": "0",
+      "executed_quote_qty": "0",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  ],
+  "total_count": 1,
+  "total_page": 1
+}
+```
+
+---
 
 ## Get trade orders
 
 Get trade orders (orders with executions) for the authenticated user with pagination. Quantities are returned in human-readable format adjusted for token decimals.
 
-```json
-{"openapi":"3.1.1","info":{"title":"Espresso API Server","version":"1.0"},"security":[{"ApiKeyAuth":[]}],"paths":{"/accounts/trade-orders":{"get":{"description":"Get trade orders (orders with executions) for the authenticated user with pagination. Quantities are returned in human-readable format adjusted for token decimals.","parameters":[{"schema":{"type":"string"},"description":"API Key","in":"header","name":"X-API-KEY","required":true},{"schema":{"type":"string"},"description":"Trading pair symbol","in":"query","name":"symbol","required":true},{"schema":{"type":"integer"},"description":"Page number for pagination, default is 1","in":"query","name":"page"},{"schema":{"type":"integer"},"description":"Limit number of records per page, default is 10","in":"query","name":"limit"}],"responses":{"200":{"description":"Paginated trade orders with decimal-adjusted quantities","content":{"application/json":{"schema":{"$ref":"#/components/schemas/PaginatedOrderResponse"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ErrorJSONWithCodeResponse"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ErrorJSONWithCodeResponse"}}}},"422":{"description":"Unprocessable Entity","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ErrorJSONWithCodeResponse"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ErrorJSONWithCodeResponse"}}}}},"summary":"Get trade orders","tags":["accounts"]}}},"components":{"schemas":{"PaginatedOrderResponse":{"properties":{"data":{"items":{"$ref":"#/components/schemas/OrderResponse"},"type":"array"},"total_count":{"type":"integer"},"total_page":{"type":"integer"}},"type":"object"},"OrderResponse":{"properties":{"account_id":{"type":"string"},"id":{"type":"string"},"symbol":{"type":"string"},"side":{"type":"string","enum":["buy","sell"]},"type":{"type":"string","enum":["market","limit"]},"status":{"type":"string","enum":["building","processing","open","closed","failed","cancelled"]},"price":{"type":"string"},"base_qty":{"type":"string"},"quote_qty":{"type":"string"},"executed_base_qty":{"type":"string"},"executed_quote_qty":{"type":"string"},"executed_price":{"type":"string"},"commission":{"type":"string"},"commission_unit":{"type":"string"},"commission_rate_bp":{"type":"integer"},"slippage_bp":{"type":"integer"},"created_at":{"type":"string"},"updated_at":{"type":"string"},"order_execution_records":{"items":{"$ref":"#/components/schemas/OrderExecutionRecordResponse"},"type":"array"}},"type":"object"},"OrderExecutionRecordResponse":{"properties":{"id":{"type":"string"},"order_id":{"type":"string"},"account_id":{"type":"string"},"counter_party_order_id":{"type":"string"},"execution_price":{"type":"string"},"filled_base_qty":{"type":"string"},"filled_quote_qty":{"type":"string"},"commission":{"type":"string"},"commission_unit":{"type":"string"},"role":{"type":"string","enum":["maker","taker"]},"created_at":{"type":"string"}},"type":"object"},"ErrorJSONWithCodeResponse":{"properties":{"code":{"type":"integer"},"error":{"type":"string"}},"type":"object"}}}}
+{% tabs %}
+{% tab title="Curl" %}
+```sh
+curl --location 'https://api.deltadefi.io/accounts/trade-orders?symbol=ADAUSDX&page=1&limit=10' \
+--header 'X-API-KEY: <your_api_key>'
 ```
+{% endtab %}
+
+{% tab title="NodeJs (axios)" %}
+```javascript
+const axios = require('axios');
+
+let config = {
+  method: 'get',
+  maxBodyLength: Infinity,
+  url: 'https://api.deltadefi.io/accounts/trade-orders?symbol=ADAUSDX&page=1&limit=10',
+  headers: { 
+    'X-API-KEY': '<your_api_key>'
+  }
+};
+
+axios.request(config)
+.then((response) => {
+  console.log(JSON.stringify(response.data));
+})
+.catch((error) => {
+  console.log(error);
+});
+```
+{% endtab %}
+
+{% tab title="Go" %}
+```go
+package main
+
+import (
+  "fmt"
+  "net/http"
+  "io"
+)
+
+func main() {
+  url := "https://api.deltadefi.io/accounts/trade-orders?symbol=ADAUSDX&page=1&limit=10"
+  method := "GET"
+
+  client := &http.Client{}
+  req, err := http.NewRequest(method, url, nil)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  req.Header.Add("X-API-KEY", "<your_api_key>")
+
+  res, err := client.Do(req)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  defer res.Body.Close()
+
+  body, err := io.ReadAll(res.Body)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  fmt.Println(string(body))
+}
+```
+{% endtab %}
+{% endtabs %}
+
+**Response:**
+
+```json
+{
+  "data": [
+    {
+      "id": "order_123",
+      "account_id": "acc_456",
+      "symbol": "ADAUSDX",
+      "side": "buy",
+      "type": "limit",
+      "status": "closed",
+      "price": "0.93",
+      "base_qty": "100",
+      "quote_qty": "93",
+      "executed_base_qty": "100",
+      "executed_quote_qty": "93",
+      "executed_price": "0.93",
+      "commission": "0.093",
+      "commission_unit": "USDX",
+      "commission_rate_bp": 10,
+      "order_execution_records": [
+        {
+          "id": "exec_789",
+          "order_id": "order_123",
+          "execution_price": "0.93",
+          "filled_base_qty": "100",
+          "filled_quote_qty": "93",
+          "role": "taker",
+          "created_at": "2024-01-01T00:00:00Z"
+        }
+      ]
+    }
+  ],
+  "total_count": 1,
+  "total_page": 1
+}
+```
+
+---
 
 ## Get account trades
 
 Get execution records (trades) for the authenticated user with pagination. Quantities are returned in human-readable format adjusted for token decimals.
 
-```json
-{"openapi":"3.1.1","info":{"title":"Espresso API Server","version":"1.0"},"security":[{"ApiKeyAuth":[]}],"paths":{"/accounts/trades":{"get":{"description":"Get execution records (trades) for the authenticated user with pagination. Quantities are returned in human-readable format adjusted for token decimals.","parameters":[{"schema":{"type":"string"},"description":"API Key","in":"header","name":"X-API-KEY","required":true},{"schema":{"type":"string"},"description":"Trading pair symbol","in":"query","name":"symbol","required":true},{"schema":{"type":"integer"},"description":"Page number for pagination, default is 1","in":"query","name":"page"},{"schema":{"type":"integer"},"description":"Limit number of records per page, default is 10","in":"query","name":"limit"}],"responses":{"200":{"description":"Paginated account trades with decimal-adjusted quantities","content":{"application/json":{"schema":{"$ref":"#/components/schemas/PaginatedTradesResponse"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ErrorJSONWithCodeResponse"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ErrorJSONWithCodeResponse"}}}},"422":{"description":"Unprocessable Entity","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ErrorJSONWithCodeResponse"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ErrorJSONWithCodeResponse"}}}}},"summary":"Get account trades","tags":["accounts"]}}},"components":{"schemas":{"PaginatedTradesResponse":{"properties":{"data":{"items":{"$ref":"#/components/schemas/OrderExecutionRecordResponse"},"type":"array"},"total_count":{"type":"integer"},"total_page":{"type":"integer"}},"type":"object"},"OrderExecutionRecordResponse":{"properties":{"id":{"type":"string"},"order_id":{"type":"string"},"account_id":{"type":"string"},"counter_party_order_id":{"type":"string"},"execution_price":{"type":"string"},"filled_base_qty":{"type":"string"},"filled_quote_qty":{"type":"string"},"commission":{"type":"string"},"commission_unit":{"type":"string"},"role":{"type":"string","enum":["maker","taker"]},"created_at":{"type":"string"}},"type":"object"},"ErrorJSONWithCodeResponse":{"properties":{"code":{"type":"integer"},"error":{"type":"string"}},"type":"object"}}}}
+{% tabs %}
+{% tab title="Curl" %}
+```sh
+curl --location 'https://api.deltadefi.io/accounts/trades?symbol=ADAUSDX&page=1&limit=10' \
+--header 'X-API-KEY: <your_api_key>'
 ```
+{% endtab %}
+
+{% tab title="NodeJs (axios)" %}
+```javascript
+const axios = require('axios');
+
+let config = {
+  method: 'get',
+  maxBodyLength: Infinity,
+  url: 'https://api.deltadefi.io/accounts/trades?symbol=ADAUSDX&page=1&limit=10',
+  headers: { 
+    'X-API-KEY': '<your_api_key>'
+  }
+};
+
+axios.request(config)
+.then((response) => {
+  console.log(JSON.stringify(response.data));
+})
+.catch((error) => {
+  console.log(error);
+});
+```
+{% endtab %}
+
+{% tab title="Go" %}
+```go
+package main
+
+import (
+  "fmt"
+  "net/http"
+  "io"
+)
+
+func main() {
+  url := "https://api.deltadefi.io/accounts/trades?symbol=ADAUSDX&page=1&limit=10"
+  method := "GET"
+
+  client := &http.Client{}
+  req, err := http.NewRequest(method, url, nil)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  req.Header.Add("X-API-KEY", "<your_api_key>")
+
+  res, err := client.Do(req)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  defer res.Body.Close()
+
+  body, err := io.ReadAll(res.Body)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  fmt.Println(string(body))
+}
+```
+{% endtab %}
+{% endtabs %}
+
+**Response:**
+
+```json
+{
+  "data": [
+    {
+      "id": "exec_789",
+      "order_id": "order_123",
+      "account_id": "acc_456",
+      "counter_party_order_id": "order_999",
+      "execution_price": "0.93",
+      "filled_base_qty": "100",
+      "filled_quote_qty": "93",
+      "commission": "0.093",
+      "commission_unit": "USDX",
+      "role": "taker",
+      "created_at": "2024-01-01T00:00:00Z"
+    }
+  ],
+  "total_count": 1,
+  "total_page": 1
+}
+```
+
+---
 
 ## Get a single order record
 
 Get a single order record by order ID.
 
+{% tabs %}
+{% tab title="Curl" %}
+```sh
+curl --location 'https://api.deltadefi.io/account/order?id=<order_id>' \
+--header 'X-API-KEY: <your_api_key>'
+```
+{% endtab %}
+
+{% tab title="NodeJs (axios)" %}
+```javascript
+const axios = require('axios');
+
+let config = {
+  method: 'get',
+  maxBodyLength: Infinity,
+  url: 'https://api.deltadefi.io/account/order?id=<order_id>',
+  headers: { 
+    'X-API-KEY': '<your_api_key>'
+  }
+};
+
+axios.request(config)
+.then((response) => {
+  console.log(JSON.stringify(response.data));
+})
+.catch((error) => {
+  console.log(error);
+});
+```
+{% endtab %}
+
+{% tab title="Go" %}
+```go
+package main
+
+import (
+  "fmt"
+  "net/http"
+  "io"
+)
+
+func main() {
+  url := "https://api.deltadefi.io/account/order?id=<order_id>"
+  method := "GET"
+
+  client := &http.Client{}
+  req, err := http.NewRequest(method, url, nil)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  req.Header.Add("X-API-KEY", "<your_api_key>")
+
+  res, err := client.Do(req)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  defer res.Body.Close()
+
+  body, err := io.ReadAll(res.Body)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  fmt.Println(string(body))
+}
+```
+{% endtab %}
+{% endtabs %}
+
+**Response:**
+
 ```json
-{"openapi":"3.1.1","info":{"title":"Espresso API Server","version":"1.0"},"security":[{"ApiKeyAuth":[]}],"paths":{"/account/order":{"get":{"description":"Get a single order record by order ID","parameters":[{"schema":{"type":"string"},"description":"Order ID","in":"query","name":"id","required":true}],"responses":{"200":{"description":"Order details","content":{"application/json":{"schema":{"$ref":"#/components/schemas/OrderResponse"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ErrorJSONWithCodeResponse"}}}},"422":{"description":"Unprocessable Entity","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ErrorJSONWithCodeResponse"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ErrorJSONWithCodeResponse"}}}}},"summary":"Get a single order record","tags":["accounts"]}}},"components":{"schemas":{"OrderResponse":{"properties":{"account_id":{"type":"string"},"id":{"type":"string"},"symbol":{"type":"string"},"side":{"type":"string","enum":["buy","sell"]},"type":{"type":"string","enum":["market","limit"]},"status":{"type":"string","enum":["building","processing","open","closed","failed","cancelled"]},"price":{"type":"string"},"base_qty":{"type":"string"},"quote_qty":{"type":"string"},"executed_base_qty":{"type":"string"},"executed_quote_qty":{"type":"string"},"executed_price":{"type":"string"},"commission":{"type":"string"},"commission_unit":{"type":"string"},"commission_rate_bp":{"type":"integer"},"slippage_bp":{"type":"integer"},"created_at":{"type":"string"},"updated_at":{"type":"string"},"order_execution_records":{"items":{"$ref":"#/components/schemas/OrderExecutionRecordResponse"},"type":"array"}},"type":"object"},"OrderExecutionRecordResponse":{"properties":{"id":{"type":"string"},"order_id":{"type":"string"},"account_id":{"type":"string"},"counter_party_order_id":{"type":"string"},"execution_price":{"type":"string"},"filled_base_qty":{"type":"string"},"filled_quote_qty":{"type":"string"},"commission":{"type":"string"},"commission_unit":{"type":"string"},"role":{"type":"string","enum":["maker","taker"]},"created_at":{"type":"string"}},"type":"object"},"ErrorJSONWithCodeResponse":{"properties":{"code":{"type":"integer"},"error":{"type":"string"}},"type":"object"}}}}
+{
+  "id": "order_123",
+  "account_id": "acc_456",
+  "symbol": "ADAUSDX",
+  "side": "buy",
+  "type": "limit",
+  "status": "open",
+  "price": "0.93",
+  "base_qty": "100",
+  "quote_qty": "93",
+  "executed_base_qty": "0",
+  "executed_quote_qty": "0",
+  "created_at": "2024-01-01T00:00:00Z",
+  "updated_at": "2024-01-01T00:00:00Z"
+}
 ```
