@@ -2,20 +2,78 @@
 
 Cancel a single order by order ID. This endpoint directly cancels the order without requiring a separate build/submit step.
 
-```json
-{"openapi":"3.1.1","info":{"title":"Espresso API Server","version":"1.0"},"security":[{"ApiKeyAuth":[]}],"paths":{"/order/{orderId}/cancel":{"post":{"description":"Cancel a single order by order ID","parameters":[{"schema":{"type":"string"},"description":"Order ID","in":"path","name":"orderId","required":true}],"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"$ref":"#/components/schemas/CancelOrderResponse"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ErrorJSONWithCodeResponse"}}}},"404":{"description":"Order Not Found","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ErrorJSONWithCodeResponse"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ErrorJSONWithCodeResponse"}}}}},"summary":"Cancel an order","tags":["order"]}}},"components":{"schemas":{"CancelOrderResponse":{"properties":{"order_id":{"type":"string"}},"type":"object"},"ErrorJSONWithCodeResponse":{"properties":{"code":{"type":"integer"},"error":{"type":"string"}},"type":"object"}}}}
+{% tabs %}
+{% tab title="Curl" %}
+```sh
+curl --location --request POST 'https://api.deltadefi.io/order/<order_id>/cancel' \
+--header 'X-API-KEY: <your_api_key>'
 ```
+{% endtab %}
 
-## Example
+{% tab title="NodeJs (axios)" %}
+```javascript
+const axios = require('axios');
 
-### Request
+let config = {
+  method: 'post',
+  maxBodyLength: Infinity,
+  url: 'https://api.deltadefi.io/order/<order_id>/cancel',
+  headers: { 
+    'X-API-KEY': '<your_api_key>'
+  }
+};
 
-```bash
-curl -X POST "https://api.deltadefi.io/order/550e8400-e29b-41d4-a716-446655440000/cancel" \
-  -H "X-API-KEY: your_api_key"
+axios.request(config)
+.then((response) => {
+  console.log(JSON.stringify(response.data));
+})
+.catch((error) => {
+  console.log(error);
+});
 ```
+{% endtab %}
 
-### Response
+{% tab title="Go" %}
+```go
+package main
+
+import (
+  "fmt"
+  "net/http"
+  "io"
+)
+
+func main() {
+  url := "https://api.deltadefi.io/order/<order_id>/cancel"
+  method := "POST"
+
+  client := &http.Client{}
+  req, err := http.NewRequest(method, url, nil)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  req.Header.Add("X-API-KEY", "<your_api_key>")
+
+  res, err := client.Do(req)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  defer res.Body.Close()
+
+  body, err := io.ReadAll(res.Body)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  fmt.Println(string(body))
+}
+```
+{% endtab %}
+{% endtabs %}
+
+**Response:**
 
 ```json
 {
