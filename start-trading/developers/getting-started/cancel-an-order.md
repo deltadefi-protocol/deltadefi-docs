@@ -101,7 +101,7 @@ func main() {
 
 With the returned tx\_hex from step 1, you will need to [sign it](../../../faq/cardano.md#how-can-i-sign-a-cardano-transaction) before submitting it.
 
-For in-depth API details [submit-cancel-order-transaction.md](../api-documentation/order/submit-cancel-order-transaction.md "mention")
+For in-depth API details [Broken link](/broken/pages/X0YE15uuYU3i5me7UgFx "mention")
 
 {% tabs %}
 {% tab title="Curl" %}
