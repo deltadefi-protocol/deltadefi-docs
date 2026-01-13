@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Withdraw funds
 
 {% stepper %}

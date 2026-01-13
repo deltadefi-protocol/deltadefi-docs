@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Deposit funds
 
 {% hint style="info" %}
