@@ -82,11 +82,36 @@ We will start testing by hosting all nodes and then invite trusted community par
 
 <summary>Who is hosting the Hydra node right now? What is the roadmap of decentralization?</summary>
 
-Hydra's fund safety comes from "at least one honest participant". Achieving sufficient decentralization in Hydra comes with some decisions on who could host the DeltaDeFi Hydra node and open-sourcing the infrastructure.
+Currently we start by solely hosting the Hydra nodes, since we are working closely with Hydra team on [several issues](https://github.com/deltadefi-protocol/hydra-issues). Prior to Hydra software stablize, we have to iterate quickly for features / bug fixed. Once it becomes more stable, we will start decentalizing nodes.
 
-Given that the decentralization of how we use Hydra can be improved over time, and also with limited funding, our team decides to focus every resource possible on bringing the right product to Cardano at first.
+Overall speaking, we planned on 3 phases to decentralize DeltaDeFi:
 
-We will start testing by hosting all nodes and then invite trusted community parties to host part of the Hydra nodes. DeltaDeFi will become more and more decentralized as times go by, and eventually a fully decentralized DApp for the community.
+
+
+1. Current: Prove product market fit and derisk technology
+
+In this current phase, we focus on attaining product market fit of the DEX itself, and derisk technology:
+
+* Done: Architecture (merklized Hydra application), DApp development (open source suite)
+* Limitation: Hydra software stability and maintenability
+
+
+
+2. Decentralizing hydra node (post hydra software stability)
+
+Once hydra software stabilizes (at this moment mostly focusing on TPS and snapshot reliability), we will add more parties into co-hosting the hydra node to pseudo-decentralize the platform.
+
+It is not pursued now since hydra software is still under rapid updates. It will kill iteration speed if we add too early
+
+
+
+3. Decentralizing matching engine
+
+Once DeltaDeFi attains economic sustainability, we will research on designing and building a UTxO native on-chain order book, to further put order matching on-chain.
+
+
+
+We are determined to move DeltaDeFi into a community owned decentralized protocol, and taking a step-by-step approach.
 
 
 
