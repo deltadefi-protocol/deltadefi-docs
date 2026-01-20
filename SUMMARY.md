@@ -74,6 +74,7 @@
   * [SDKs](start-trading/developers/sdks/README.md)
     * [Typescript](start-trading/developers/sdks/typescript.md)
     * [Python](start-trading/developers/sdks/python.md)
+* [✨ DLTA Points (XP)](start-trading/dlta-points-xp.md)
 
 ## FAQ
 

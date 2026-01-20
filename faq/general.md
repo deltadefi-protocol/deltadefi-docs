@@ -6,7 +6,7 @@
 
 <summary>Wen launch?</summary>
 
-We have launched the first beta mainnet on Nov 12!
+We have launched the first beta mainnet on Nov 12! Full launch is schedule in Jan 2026, where multi-pairs will be supported with full deposit / withdrawal features.
 
 </details>
 
@@ -16,10 +16,7 @@ We have launched the first beta mainnet on Nov 12!
 
 We have a token plan, but right now it is still in the early stage that we don't have the exact tokenomics fleshed out.&#x20;
 
-The initial plan, subject to frequent change, for token is to serve 2 purposes:
-
-* Enable funding to support decentralizing the protocol
-* Use as a medium to engage the Cardano community, fostering feedback loop and bootstraping early use community
+A certain thing is a considerable amount of distribution will be allocated for airdrop to our early adopters. [dlta-points-xp.md](../start-trading/dlta-points-xp.md "mention") will be one of our core indicators to distinguish our early supportors and rewards them accordingly.
 
 </details>
 
@@ -80,4 +77,20 @@ We will start testing by hosting all nodes and then invite trusted community par
 
 
 </details>
+
+<details>
+
+<summary>Who is hosting the Hydra node right now? What is the roadmap of decentralization?</summary>
+
+Hydra's fund safety comes from "at least one honest participant". Achieving sufficient decentralization in Hydra comes with some decisions on who could host the DeltaDeFi Hydra node and open-sourcing the infrastructure.
+
+Given that the decentralization of how we use Hydra can be improved over time, and also with limited funding, our team decides to focus every resource possible on bringing the right product to Cardano at first.
+
+We will start testing by hosting all nodes and then invite trusted community parties to host part of the Hydra nodes. DeltaDeFi will become more and more decentralized as times go by, and eventually a fully decentralized DApp for the community.
+
+
+
+</details>
+
+
 

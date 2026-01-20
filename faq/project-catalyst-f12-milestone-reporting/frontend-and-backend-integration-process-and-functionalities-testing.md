@@ -120,7 +120,7 @@ Continuing from the Build Deposit Transaction, frontend will submit the user-sig
 
 ### POST - /accounts/deposit/submit (Status Code)
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The `200 status code` shows the api is being called and responded successfully
 
@@ -128,7 +128,7 @@ The `200 status code` shows the api is being called and responded successfully
 
 ### POST - /accounts/deposit/submit (Request params)
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -490,7 +490,7 @@ The `200 status code` shows the api is being called and responded successfully
 
 ### POST - order/build (Request Parameters)
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 
 

@@ -35,7 +35,7 @@ A generic, type-safe HTTP client for REST API calls:
 
 We tested all backend integrated APIs using the fetch/XHR tab under the network tab of `Developer Tools`  tab in google chrome
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -53,7 +53,7 @@ We tested all backend integrated APIs using the fetch/XHR tab under the network 
 
 We tested all backend integrated websocket using the socket tab under the network tab of `Developer Tools`  tab in google chrome
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Testing Coverage
 

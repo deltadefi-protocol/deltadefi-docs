@@ -1,8 +1,14 @@
 # Deposit
 
+### Regular Deposit
+
 You can deposit through the trading interface. Once the transaction is signed and submitted, we will process the deposit, and the balance will be available for trade following the next deposit cycle.
 
 <figure><img src="../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+
+### Fast Deposit
+
+
 
 After successful deposit, the balance will be reflected on trading page.
 
