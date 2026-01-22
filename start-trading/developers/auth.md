@@ -4,7 +4,7 @@ Access to all our APIs requires an API key obtained from the dashboard.&#x20;
 
 Simply connect your wallet and navigate to the Dashboard page.
 
-<figure><img src="../../.gitbook/assets/CleanShot 2025-11-11 at 11.16.13.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-01-22 at 18.49.37.png" alt=""><figcaption></figcaption></figure>
 
 This key must be included in the headers as "X-API-KEY" for authentication.
 

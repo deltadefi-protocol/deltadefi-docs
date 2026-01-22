@@ -6,4 +6,4 @@ If you want to trade programmatically, here is also the entrance point to obtain
 
 
 
-<figure><img src="../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-01-22 at 18.30.54.png" alt=""><figcaption></figcaption></figure>
