@@ -4,7 +4,7 @@ Signing in is as simple as just connecting your wallet. Choose your preferred wa
 
 <figure><img src="../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
 
-If it is your first-time sign-in, you will be asked to define your trading password.&#x20;
+If it is your first-time sign-in, you will be asked to define your trading password. You may also optionally enter a referral code at this step to receive a starting bonus, if you have one.
 
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
