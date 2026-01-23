@@ -28,3 +28,13 @@ For interacting with DeltaDeFi APIs, we suggest signing the Cardano transactions
 * [Python SDK](https://github.com/deltadefi-protocol/python-sdk) - [gin](https://github.com/sidan-lab/gin)
 
 For signing the transaction with your [operation key](../about/learn/architecture/account.md), you first obtain the encrypted key with your API Key then decrypt it to the private key so that you can use the same tool chain above to perform transaction signing. There are also [end-to-end examples](https://github.com/deltadefi-protocol/sdks-demo) of integrating these SDKs to perform trades, which can help you speed up enjoying trading on DeltaDeFi.
+
+***
+
+## Can DeltaDeFi support hardware wallet?
+
+Yes we can definitely support hardware wallet. Since each hardware wallet provider has different nuances to integrate, if your hardware wallet is not included in the list, please create a ticket and our team will follow up adding the integration.
+
+Supported hardware wallet:
+
+* Ledger
