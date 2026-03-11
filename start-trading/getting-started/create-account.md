@@ -6,11 +6,11 @@ Signing in is as simple as just connecting your wallet. Choose your preferred wa
 
 If it is your first-time sign-in, you will be asked to define your trading password. You may also optionally enter a referral code at this step to receive a starting bonus, if you have one.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 After setting up your trading password, you can make deposit anytime.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
