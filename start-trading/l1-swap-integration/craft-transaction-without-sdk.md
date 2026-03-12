@@ -5,7 +5,7 @@
 Building a swap intent is straightforward - you just need to create a transaction output at the swap intent script address, locking `fromAmount + deposit` with a valid `SwapIntentDatum`.
 
 {% hint style="warning" %}
-Minimum Order Value: Order value must be at least 5 USDM equivalent.
+Minimum Order Value: Order value must be at least 10 USDM equivalent.
 {% endhint %}
 
 #### SwapIntentDatum Structure

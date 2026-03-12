@@ -36,7 +36,7 @@ const swapIntentTx = new SwapIntentTx(config);
 Create a new swap intent to place a limit order on L1.
 
 {% hint style="warning" %}
-Minimum Order Value: Order value must be at least 5 USDM equivalent.
+Minimum Order Value: Order value must be at least 10 USDM equivalent.
 {% endhint %}
 
 ```typescript
@@ -109,4 +109,5 @@ Network parameters and constants can also be found in the SDK.
 
 * `ADAUSDM`
 * `NIGHTUSDM`
+* `ADANIGHT`
 

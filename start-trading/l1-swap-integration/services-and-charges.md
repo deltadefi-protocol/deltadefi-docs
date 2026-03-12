@@ -18,7 +18,7 @@ Therefore, to facilitate smooth order matching, we suggest adding an adequate bu
 The operator charges an additional 0.1% per swap processed. Therefore:
 
 * For `ADAUSDM`, in total 0.2% will be charged (0.1% for DeltaDeFi trading fee)
-* For `NIGHTADA`, in total 0.4% will be charged (0.2% for DeltaDeFi trading fee)
+* For `ADANIGHT`, in total 0.4% will be charged (0.2% for DeltaDeFi trading fee)
 
 The charges are reflected in [api-market-depth.md](api-market-depth.md "mention"), so when you see the market depth from the API the fee is already taken into account.
 
