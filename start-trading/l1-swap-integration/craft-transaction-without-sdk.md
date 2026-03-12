@@ -47,8 +47,7 @@ const datum = swapIntentDatum({
 
 #### The transaction must
 
-1. Reference the Oracle UTxO (read-only)
-2. Create output at swap intent script address with:
+1. Create output at swap intent script address with:
    * Value: `fromAmount + deposit`
    * Inline datum: `SwapIntentDatum`
 

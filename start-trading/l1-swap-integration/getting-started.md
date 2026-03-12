@@ -3,7 +3,7 @@
 ### Configuration
 
 ```
-npm install @deltadefi-protocol/khor@1.0.5
+npm install @deltadefi-protocol/khor@1.0.6
 ```
 
 Obtain constants for creating transactions
@@ -45,7 +45,6 @@ const result = await swapIntentTx.createSwapIntent(
     utxos,
     collateral,
     changeAddress: userAddress,
-    oracleUtxo: config.oracleUtxo,
     accountAddress: userAddress,
     fromAmount: [{ unit: config.tokens.night, quantity: "100000000" }], // 100 NIGHT
     toAmount: [{ unit: config.tokens.usdm, quantity: "5000000" }], // 5 USDM
