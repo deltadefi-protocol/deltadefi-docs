@@ -108,5 +108,4 @@ Network parameters and constants can also be found in the SDK.
 
 * `ADAUSDM`
 * `NIGHTUSDM`
-* `ADANIGHT`
-
+* `NIGHTADA`
