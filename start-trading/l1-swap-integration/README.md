@@ -16,8 +16,7 @@ DeltaDeFi is a L2 protocol that operates in Hydra head. Therefore, a typical use
 
 
 {% hint style="info" %}
-Test Tokens: Request test USDM and NIGHT tokens for preprod at https://alpha-app.deltadefi.io/testing-usd-request
+Test Tokens: Request test USDCx and NIGHT tokens for preprod at https://alpha-app.deltadefi.io/testing-usd-request
 {% endhint %}
 
 ***
-

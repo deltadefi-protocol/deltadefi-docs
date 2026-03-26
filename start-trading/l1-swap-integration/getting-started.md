@@ -36,7 +36,7 @@ const swapIntentTx = new SwapIntentTx(config);
 Create a new swap intent to place a limit order on L1.
 
 {% hint style="warning" %}
-Minimum Order Value: Order value must be at least 10 USDM equivalent.
+Minimum Order Value: Order value must be at least 10 USDCx equivalent.
 {% endhint %}
 
 ```typescript
@@ -46,8 +46,8 @@ const result = await swapIntentTx.createSwapIntent(
     collateral,
     changeAddress: userAddress,
     accountAddress: userAddress,
-    fromAmount: [{ unit: config.tokens.night, quantity: "100000000" }], // 100 NIGHT
-    toAmount: [{ unit: config.tokens.usdm, quantity: "5000000" }], // 5 USDM
+    fromAmount: [{ unit: config.tokens.usdm, quantity: "100000000" }], // 100 NIGHT
+    toAmount: [{ unit: config.tokens.usdm, quantity: "5000000" }], // 5 USDCx
     // Optional parameters:
     // deposit: 2_000_000,        // default: 2 ADA
     // expiry: 10 * 60 * 1000,    // default: 10 mins (in milliseconds)
@@ -106,6 +106,6 @@ Network parameters and constants can also be found in the SDK.
 
 ### Supported Pairs
 
-* `ADAUSDM`
-* `NIGHTUSDM`
+* `ADAUSDCx`
+* `NIGHTUSDCx`
 * `NIGHTADA`

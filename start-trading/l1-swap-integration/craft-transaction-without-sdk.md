@@ -5,7 +5,7 @@
 Building a swap intent is straightforward - you just need to create a transaction output at the swap intent script address, locking `fromAmount + deposit` with a valid `SwapIntentDatum`.
 
 {% hint style="warning" %}
-Minimum Order Value: Order value must be at least 10 USDM equivalent.
+Minimum Order Value: Order value must be at least 10 USDCx equivalent.
 {% endhint %}
 
 #### SwapIntentDatum Structure
@@ -53,7 +53,7 @@ const datum = swapIntentDatum({
 
 #### Example Datum
 
-* SELL 50 ADA for 2.5 USDM
+* SELL 50 ADA for 2.5 USDCx
 
 ```json
 {
@@ -65,7 +65,7 @@ const datum = swapIntentDatum({
 }
 ```
 
-* BUY 60 ADA with 3 USDM
+* BUY 60 ADA with 3 USDCx
 
 ```json
 {
