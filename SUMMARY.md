@@ -78,7 +78,7 @@
 * [L1 Swap Integration](start-trading/l1-swap-integration/README.md)
   * [Getting Started](start-trading/l1-swap-integration/getting-started.md)
   * [Craft Transaction without SDK](start-trading/l1-swap-integration/craft-transaction-without-sdk.md)
-  * [API - Market Depth](start-trading/l1-swap-integration/api-market-depth.md)
+  * [Integration APIs](start-trading/l1-swap-integration/api-market-depth.md)
   * [Services and Charges](start-trading/l1-swap-integration/services-and-charges.md)
 
 ## FAQ
