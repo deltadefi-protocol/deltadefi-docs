@@ -4,14 +4,14 @@ DeltaDeFi hosts official APIs to improve accessibility of the L1 swap contracts.
 
 ### URL
 
-| Environment | URL Endpoint |
-|---|---|
-| Pre-Prod | `https://operator-staging.deltadefi.io` |
-| Mainnet | TBC |
+| Environment | URL Endpoint                            |
+| ----------- | --------------------------------------- |
+| Pre-Prod    | `https://operator-staging.deltadefi.io` |
+| Mainnet     | TBC                                     |
 
 ***
 
-### GET /swapIntent/depth/{symbol}
+### GET - Market Depth
 
 Get the current market depth for a trading pair post fee. The `price` shown in depth response has already factored in fees — it is exactly what you could expect to trade at.
 
@@ -22,7 +22,7 @@ This endpoint uses internal symbol names (e.g. `ADAUSDM`, `NIGHTUSDM`, `NIGHTADA
 #### Example Request
 
 ```
-GET /swapIntent/depth/NIGHTUSDM
+GET /swapIntent/depth/NIGHTUSDC
 ```
 
 #### Example Response
@@ -42,23 +42,23 @@ GET /swapIntent/depth/NIGHTUSDM
 
 #### Response Fields
 
-| Field | Type | Description |
-|---|---|---|
-| timestamp | number | Unix timestamp in milliseconds |
-| bids | array | Buy orders — price/quantity objects sorted by descending price |
-| asks | array | Sell orders — price/quantity objects sorted by ascending price |
+| Field     | Type   | Description                                                    |
+| --------- | ------ | -------------------------------------------------------------- |
+| timestamp | number | Unix timestamp in milliseconds                                 |
+| bids      | array  | Buy orders — price/quantity objects sorted by descending price |
+| asks      | array  | Sell orders — price/quantity objects sorted by ascending price |
 
 #### Supported Symbols
 
-| Symbol | Type | Description |
-|---|---|---|
-| `ADAUSDM` | Direct | ADA/USDM pair — 0.2% spread (0.1% trading + 0.1% operator) |
-| `NIGHTUSDM` | Direct | NIGHT/USDM pair — 0.2% spread |
-| `NIGHTADA` | Cross-pair | Synthetic depth from NIGHTUSDM + ADAUSDM — 0.4% spread (0.2% trading + 0.2% operator) |
+| Symbol      | Type       | Description                                                                           |
+| ----------- | ---------- | ------------------------------------------------------------------------------------- |
+| `ADAUSDM`   | Direct     | ADA/USDM pair — 0.2% spread (0.1% trading + 0.1% operator)                            |
+| `NIGHTUSDM` | Direct     | NIGHT/USDM pair — 0.2% spread                                                         |
+| `NIGHTADA`  | Cross-pair | Synthetic depth from NIGHTUSDM + ADAUSDM — 0.4% spread (0.2% trading + 0.2% operator) |
 
 ***
 
-### GET /pairs
+### GET - Supported Pairs
 
 Get the list of supported trading pairs. Use this to understand which pairs are available for integration.
 
@@ -106,20 +106,20 @@ GET /pairs
 
 #### Response Fields
 
-| Field | Type | Description |
-|---|---|---|
-| pairs | array | List of supported trading pairs |
-| pairs[].symbol | string | Trading pair symbol used across APIs |
-| pairs[].baseToken | string | Human-readable base token name |
-| pairs[].baseTokenUnit | string | On-chain unit identifier (policyId + asset name) for the base token |
-| pairs[].quoteToken | string | Human-readable quote token name |
-| pairs[].quoteTokenUnit | string | On-chain unit identifier (policyId + asset name) for the quote token |
-| pairs[].priceDp | number | Decimal places for price display |
-| pairs[].quantityDp | number | Decimal places for quantity display |
+| Field                   | Type   | Description                                                          |
+| ----------------------- | ------ | -------------------------------------------------------------------- |
+| pairs                   | array  | List of supported trading pairs                                      |
+| pairs\[].symbol         | string | Trading pair symbol used across APIs                                 |
+| pairs\[].baseToken      | string | Human-readable base token name                                       |
+| pairs\[].baseTokenUnit  | string | On-chain unit identifier (policyId + asset name) for the base token  |
+| pairs\[].quoteToken     | string | Human-readable quote token name                                      |
+| pairs\[].quoteTokenUnit | string | On-chain unit identifier (policyId + asset name) for the quote token |
+| pairs\[].priceDp        | number | Decimal places for price display                                     |
+| pairs\[].quantityDp     | number | Decimal places for quantity display                                  |
 
 ***
 
-### GET /orders/{txHash}/{outputIndex}
+### GET - Order Status
 
 Get the status of a swap intent order by its UTxO reference. The UTxO reference is split into path segments (instead of `txHash#outputIndex`) to avoid URL encoding issues.
 
@@ -163,7 +163,7 @@ The operator is actively settling this order.
 
 #### Example Response — Expired
 
-The order is still on-chain but has passed the 600-slot (~10 minute) expiry window and is eligible for cancellation.
+The order is still on-chain but has passed the 600-slot (\~10 minute) expiry window and is eligible for cancellation.
 
 ```json
 {
@@ -210,32 +210,32 @@ HTTP 404
 
 #### Response Fields
 
-| Field | Type | Description |
-|---|---|---|
-| txHash | string | Transaction hash of the swap intent UTxO |
-| outputIndex | number | Output index of the swap intent UTxO |
-| status | string | Order status: `on_book`, `processing`, `expired`, or `completed` |
-| order | object | Order details (present for `on_book` and `expired` statuses) |
-| order.side | string | `buy` or `sell` |
-| order.symbol | string | Trading pair symbol (e.g. `ADAUSDCx`) |
-| order.fromAmount | array | Assets being swapped from (on-chain format: unit + quantity) |
-| order.toAmount | array | Minimum assets expected to receive (on-chain format: unit + quantity) |
-| order.price | string | Effective price (quote per base) |
-| expiryTime | number | Unix timestamp in milliseconds when the order becomes cancellable (present for `on_book` and `expired`) |
-| settlementTxHash | string | Transaction hash of the settlement (present for `completed` status only) |
+| Field            | Type   | Description                                                                                             |
+| ---------------- | ------ | ------------------------------------------------------------------------------------------------------- |
+| txHash           | string | Transaction hash of the swap intent UTxO                                                                |
+| outputIndex      | number | Output index of the swap intent UTxO                                                                    |
+| status           | string | Order status: `on_book`, `processing`, `expired`, or `completed`                                        |
+| order            | object | Order details (present for `on_book` and `expired` statuses)                                            |
+| order.side       | string | `buy` or `sell`                                                                                         |
+| order.symbol     | string | Trading pair symbol (e.g. `ADAUSDCx`)                                                                   |
+| order.fromAmount | array  | Assets being swapped from (on-chain format: unit + quantity)                                            |
+| order.toAmount   | array  | Minimum assets expected to receive (on-chain format: unit + quantity)                                   |
+| order.price      | string | Effective price (quote per base)                                                                        |
+| expiryTime       | number | Unix timestamp in milliseconds when the order becomes cancellable (present for `on_book` and `expired`) |
+| settlementTxHash | string | Transaction hash of the settlement (present for `completed` status only)                                |
 
 #### Order Status Lifecycle
 
-| Status | Description |
-|---|---|
-| `on_book` | Order is on-chain at the script address, within the 10-minute validity window |
-| `processing` | Operator has claimed the order and is actively settling it on L2 |
-| `expired` | Order is on-chain but past the 10-minute validity window; eligible for cancellation |
-| `completed` | Order was successfully settled (visible for up to 1 hour after settlement) |
+| Status       | Description                                                                         |
+| ------------ | ----------------------------------------------------------------------------------- |
+| `on_book`    | Order is on-chain at the script address, within the 10-minute validity window       |
+| `processing` | Operator has claimed the order and is actively settling it on L2                    |
+| `expired`    | Order is on-chain but past the 10-minute validity window; eligible for cancellation |
+| `completed`  | Order was successfully settled (visible for up to 1 hour after settlement)          |
 
 ***
 
-### POST /cancel/build
+### POST - Build Cancel Order
 
 Build a cancel transaction for a swap intent order. This immediately reserves the order so the swap processor will not attempt to fill it, preventing contention.
 
@@ -265,29 +265,29 @@ Content-Type: application/json
 
 #### Request Fields
 
-| Field | Type | Description |
-|---|---|---|
-| txHash | string | Transaction hash of the swap intent UTxO (64-character hex) |
+| Field       | Type   | Description                                                 |
+| ----------- | ------ | ----------------------------------------------------------- |
+| txHash      | string | Transaction hash of the swap intent UTxO (64-character hex) |
 | outputIndex | number | Output index of the swap intent UTxO (non-negative integer) |
 
 #### Response Fields
 
-| Field | Type | Description |
-|---|---|---|
+| Field | Type   | Description                                                                        |
+| ----- | ------ | ---------------------------------------------------------------------------------- |
 | txHex | string | Unsigned transaction CBOR hex. Sign this with the user's wallet before submitting. |
 
 #### Error Responses
 
-| Status | Error | Description |
-|---|---|---|
-| 400 | Swap intent UTxO not found on-chain | The UTxO does not exist at the script address |
-| 400 | Invalid swap intent datum | The UTxO does not contain a valid swap intent |
-| 400 | Swap intent is already being processed | Another process (swap or cancel) has already claimed this UTxO |
-| 422 | Validation error | Invalid txHash or outputIndex format |
+| Status | Error                                  | Description                                                    |
+| ------ | -------------------------------------- | -------------------------------------------------------------- |
+| 400    | Swap intent UTxO not found on-chain    | The UTxO does not exist at the script address                  |
+| 400    | Invalid swap intent datum              | The UTxO does not contain a valid swap intent                  |
+| 400    | Swap intent is already being processed | Another process (swap or cancel) has already claimed this UTxO |
+| 422    | Validation error                       | Invalid txHash or outputIndex format                           |
 
 ***
 
-### POST /cancel/submit
+### POST - Submit Cancel Order
 
 Submit a signed cancel transaction. The operator co-signs the transaction and submits it to the Cardano network. The transaction will be rejected on-chain if the 10-minute expiry window has not yet passed.
 
@@ -314,23 +314,23 @@ Content-Type: application/json
 
 #### Request Fields
 
-| Field | Type | Description |
-|---|---|---|
+| Field    | Type   | Description                                          |
+| -------- | ------ | ---------------------------------------------------- |
 | signedTx | string | User-signed transaction CBOR hex from the build step |
 
 #### Response Fields
 
-| Field | Type | Description |
-|---|---|---|
+| Field  | Type   | Description                                          |
+| ------ | ------ | ---------------------------------------------------- |
 | txHash | string | Confirmed transaction hash of the cancel transaction |
 
 #### Error Responses
 
-| Status | Error | Description |
-|---|---|---|
-| 400 | No cancel build found | Must call `/cancel/build` first to build the transaction |
-| 400 | Cancel transaction not confirmed | Transaction was submitted but not confirmed on-chain |
-| 422 | Validation error | Invalid signedTx format |
+| Status | Error                            | Description                                              |
+| ------ | -------------------------------- | -------------------------------------------------------- |
+| 400    | No cancel build found            | Must call `/cancel/build` first to build the transaction |
+| 400    | Cancel transaction not confirmed | Transaction was submitted but not confirmed on-chain     |
+| 422    | Validation error                 | Invalid signedTx format                                  |
 
 ***
 
@@ -342,5 +342,5 @@ Content-Type: application/json
 4. **Confirmation** — The operator waits for on-chain confirmation and returns the confirmed transaction hash.
 
 {% hint style="info" %}
-You can build the cancel transaction before the expiry window passes, but the submit step will only succeed on-chain after ~10 minutes from order creation. This allows you to prepare the cancellation in advance.
+You can build the cancel transaction before the expiry window passes, but the submit step will only succeed on-chain after \~10 minutes from order creation. This allows you to prepare the cancellation in advance.
 {% endhint %}
