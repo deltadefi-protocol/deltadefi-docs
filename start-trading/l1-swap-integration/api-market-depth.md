@@ -15,14 +15,10 @@ DeltaDeFi hosts official APIs to improve accessibility of the L1 swap contracts.
 
 Get the current market depth for a trading pair post fee. The `price` shown in depth response has already factored in fees — it is exactly what you could expect to trade at.
 
-{% hint style="info" %}
-This endpoint uses internal symbol names (e.g. `ADAUSDM`, `NIGHTUSDM`, `NIGHTADA`), not the aggregator-facing `USDCx` symbols from `/pairs`.
-{% endhint %}
-
 #### Example Request
 
 ```
-GET /swapIntent/depth/NIGHTUSDM
+GET /swapIntent/depth/NIGHTUSDCx
 ```
 
 #### Example Response
@@ -52,9 +48,9 @@ GET /swapIntent/depth/NIGHTUSDM
 
 | Symbol | Type | Description |
 |---|---|---|
-| `ADAUSDM` | Direct | ADA/USDM pair — 0.2% spread (0.1% trading + 0.1% operator) |
-| `NIGHTUSDM` | Direct | NIGHT/USDM pair — 0.2% spread |
-| `NIGHTADA` | Cross-pair | Synthetic depth from NIGHTUSDM + ADAUSDM — 0.4% spread (0.2% trading + 0.2% operator) |
+| `ADAUSDCx` | Direct | ADA/USDCx pair — 0.2% spread (0.1% trading + 0.1% operator) |
+| `NIGHTUSDCx` | Direct | NIGHT/USDCx pair — 0.2% spread |
+| `NIGHTADA` | Cross-pair | Synthetic depth from NIGHTUSDCx + ADAUSDCx — 0.4% spread (0.2% trading + 0.2% operator) |
 
 ***
 
