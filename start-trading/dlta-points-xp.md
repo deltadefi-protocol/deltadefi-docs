@@ -1,6 +1,6 @@
 # ✨ DLTA Points (XP)
 
-<figure><img src="../.gitbook/assets/image (148).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (196).png" alt=""><figcaption></figcaption></figure>
 
 We are launching with a brand new XP system to reward our loyal early adopters! From now on, every dollar trade happened on DeltaDeFi, we will reward you with points. There are some quick hints for earning XPs:
 

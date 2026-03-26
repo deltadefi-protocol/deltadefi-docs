@@ -16,7 +16,7 @@ After the user has pressed the connect wallet button and signed the wallet owner
 
 ### POST - SignIn (Status Code)
 
-<figure><img src="../../.gitbook/assets/image (99).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (147).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -24,25 +24,25 @@ The `200 status code` shows the api is being called and responded successfully
 
 ### POST - SignIn (Request params)
 
-<figure><img src="../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The request param is aligned with the required request param from the backend API
 
-<figure><img src="../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (102).png" alt=""><figcaption></figcaption></figure>
 
 
 
 ### POST - SignIn (Response)
 
-<figure><img src="../../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (103).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The response fields are aligned with the required response fields from the backend API
 
-<figure><img src="../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (104).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -56,7 +56,7 @@ After the user has performed a successful sign-in, frontend will call the GET sp
 
 ### GET - Spot-account (Status Code)
 
-<figure><img src="../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (106).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -64,13 +64,13 @@ The `200 status code` shows the api is being called and responded successfully
 
 ### GET - Spot-account (Response)
 
-<figure><img src="../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (107).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The response fields are aligned with the required response fields from the backend API
 
-<figure><img src="../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (108).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -82,7 +82,7 @@ After successful signin, user can press the deposit button and select the "Regul
 
 ### POST - /accounts/deposit/build (Status Code)
 
-<figure><img src="../../.gitbook/assets/image (100).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (148).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -90,25 +90,25 @@ The `200 status code` shows the api is being called and responded successfully
 
 ### POST - /accounts/deposit/build (Request params)
 
-<figure><img src="../../.gitbook/assets/image (101).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (149).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The request param is aligned with the required request param from the backend API
 
-<figure><img src="../../.gitbook/assets/image (102).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (150).png" alt=""><figcaption></figcaption></figure>
 
 
 
 ### POST - /accounts/deposit/build (Response)
 
-<figure><img src="../../.gitbook/assets/image (103).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (151).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The response fields are aligned with the required response fields from the backend API
 
-<figure><img src="../../.gitbook/assets/image (104).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (152).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -120,7 +120,7 @@ Continuing from the Build Deposit Transaction, frontend will submit the user-sig
 
 ### POST - /accounts/deposit/submit (Status Code)
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 The `200 status code` shows the api is being called and responded successfully
 
@@ -128,25 +128,25 @@ The `200 status code` shows the api is being called and responded successfully
 
 ### POST - /accounts/deposit/submit (Request params)
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The request param is aligned with the required request param from the backend API
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 
 
 ### POST - /accounts/deposit/submit (Response)
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The response fields are aligned with the required response fields from the backend API
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -162,7 +162,7 @@ After successful signin, user can press the deposit button and select the "Fast 
 
 ### POST - /accounts/transferal/build (Status Code)
 
-<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -172,25 +172,25 @@ The `200 status code` shows the api is being called and responded successfully
 
 ### POST - /accounts/transferal/build (Request params)
 
-<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The request param is aligned with the required request param from the backend API
 
-<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
 
 
 ### POST - /accounts/transferal/build (Response)
 
-<figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The response fields are aligned with the required response fields from the backend API
 
-<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -206,7 +206,7 @@ After successful signin, user can press the deposit button and select the "Fast 
 
 ### POST - /accounts/request-transferal/build (Status Code)
 
-<figure><img src="../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
 The `200 status code` shows the api is being called and responded successfully
 
@@ -214,25 +214,25 @@ The `200 status code` shows the api is being called and responded successfully
 
 ### POST - /accounts/transferal/build (Request params)
 
-<figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The request param is aligned with the required request param from the backend API
 
-<figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
 
 
 
 ### POST - /accounts/transferal/build (Response)
 
-<figure><img src="../../.gitbook/assets/image (121).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (169).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The response fields are aligned with the required response fields from the backend API
 
-<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -246,7 +246,7 @@ Continuing from the Build Request Transferral Transaction, the frontend submits 
 
 ### POST - /accounts/request-transferal/submit (Status Code)
 
-<figure><img src="../../.gitbook/assets/image (123).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (171).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -256,25 +256,25 @@ The `200 status code` shows the api is being called and responded successfully
 
 ### POST - /accounts/transferal/submit (Request params)
 
-<figure><img src="../../.gitbook/assets/image (124).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (172).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The request param is aligned with the required request param from the backend API
 
-<figure><img src="../../.gitbook/assets/image (125).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (173).png" alt=""><figcaption></figcaption></figure>
 
 
 
 ### POST - /accounts/transferal/submit (Response)
 
-<figure><img src="../../.gitbook/assets/image (126).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (174).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The response fields are aligned with the required response fields from the backend API
 
-<figure><img src="../../.gitbook/assets/image (127).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (175).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -286,7 +286,7 @@ After successful signin, user can visit the dashboard page to view the regular d
 
 ### GET - Deposit-records (Status Code)
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -296,13 +296,13 @@ The `200 status code` shows the api is being called and responded successfully
 
 ### GET - Deposit-records (Response)
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The deposit records shown in dashboard page are aligned with the data returned by the backend API. The backend API response fields are aligned with the required response fields from the backend API
 
-<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -316,7 +316,7 @@ After successful signin, user can visit the dashboard page to view the fast depo
 
 ### GET - transferal-records (Status Code)
 
-<figure><img src="../../.gitbook/assets/image (128).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (176).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -326,11 +326,11 @@ The `200 status code` shows the api is being called and responded successfully
 
 ### GET - transferal-records (Response)
 
-<figure><img src="../../.gitbook/assets/image (129).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (177).png" alt=""><figcaption></figcaption></figure>
 
 
 
-<figure><img src="../../.gitbook/assets/image (130).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (178).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -338,7 +338,7 @@ The transferal records shown in dashboard page are aligned with the data returne
 
 
 
-<figure><img src="../../.gitbook/assets/image (131).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (179).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -352,7 +352,7 @@ After successful signin, user can visit the trading page to view the account's a
 
 ### GET - account-balance (Status Code)
 
-<figure><img src="../../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (112).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -360,13 +360,13 @@ The `200 status code` shows the api is being called and responded successfully
 
 ### GET - account-balance (Response)
 
-<figure><img src="../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (113).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The available balance shown in trading page are aligned with the api response from backend. The response fields are aligned with the required response fields from the backend API
 
-<figure><img src="../../.gitbook/assets/image (66).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (114).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -378,7 +378,7 @@ After successful signin, user can visit the trading page to view the open order 
 
 ### GET - order-records (Status Code)
 
-<figure><img src="../../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (115).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -388,13 +388,13 @@ The `200 status code` shows the api is being called and responded successfully
 
 ### GET - order-records (Response)
 
-<figure><img src="../../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (116).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The open order records shown in trading page are aligned with the api response from backend. The response fields are aligned with the required response fields from the backend API
 
-<figure><img src="../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (117).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -406,7 +406,7 @@ After successful signin, user can visit the trading page to view the order histo
 
 ### GET - order-records (Status Code)
 
-<figure><img src="../../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (118).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -414,13 +414,13 @@ The `200 status code` shows the api is being called and responded successfully
 
 ### GET - order-records (Response)
 
-<figure><img src="../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (119).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The order history records shown in trading page are aligned with the api response from backend. The response fields are aligned with the required response fields from the backend API
 
-<figure><img src="../../.gitbook/assets/image (72).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -432,7 +432,7 @@ After successful signin, user can visit the trading page to view the trade histo
 
 ### GET - order-records (Status Code)
 
-<figure><img src="../../.gitbook/assets/image (73).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (121).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -440,11 +440,11 @@ The `200 status code` shows the api is being called and responded successfully
 
 ### GET - order-records (Response)
 
-<figure><img src="../../.gitbook/assets/image (74).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (122).png" alt=""><figcaption></figcaption></figure>
 
 The trade history records shown in trading page are aligned with the api response from backend. The response fields are aligned with the required response fields from the backend API
 
-<figure><img src="../../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (123).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -456,7 +456,7 @@ After successful signin, user can visit the dashboard page to view the api-key. 
 
 ### GET - api-key (Status Code)
 
-<figure><img src="../../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (124).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -464,13 +464,13 @@ The `200 status code` shows the api is being called and responded successfully
 
 ### GET - api-key (Response)
 
-<figure><img src="../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (125).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The api key shown in dashboard page is aligned with the api response from backend. The response fields are aligned with the required response fields from the backend API
 
-<figure><img src="../../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (126).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -482,7 +482,7 @@ After successful signin, user can visit the trading page to place order. Fronten
 
 ### POST - order/build (Status Code)
 
-<figure><img src="../../.gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (127).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -490,25 +490,25 @@ The `200 status code` shows the api is being called and responded successfully
 
 ### POST - order/build (Request Parameters)
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The request param's fields are aligned with the required request params from the backend API
 
-<figure><img src="../../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (129).png" alt=""><figcaption></figcaption></figure>
 
 
 
 ### POST - order/build (Response)
 
-<figure><img src="../../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (130).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The response fields are aligned with the required response fields from the backend API
 
-<figure><img src="../../.gitbook/assets/image (83).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (131).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -520,7 +520,7 @@ Continue from the Build Place Order Transaction section, frontend submits a sign
 
 ### POST - order/submit (Status Code)
 
-<figure><img src="../../.gitbook/assets/image (84).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (132).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -528,25 +528,25 @@ The `200 status code` shows the api is being called and responded successfully
 
 ### POST - order/submit (Request Parameters)
 
-<figure><img src="../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (133).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The request param's fields are aligned with the required request params from the backend API
 
-<figure><img src="../../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (134).png" alt=""><figcaption></figcaption></figure>
 
 
 
 ### POST - order/submit (Response)
 
-<figure><img src="../../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (135).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The response fields are aligned with the required response fields from the backend API
 
-<figure><img src="../../.gitbook/assets/image (88).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (136).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -560,7 +560,7 @@ After successful signin, user can visit the trading page to cancel order. Fronte
 
 ### DELETE - order/{id}/build (Status Code)
 
-<figure><img src="../../.gitbook/assets/image (89).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (137).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -568,13 +568,13 @@ The `200 status code` shows the api is being called and responded successfully
 
 ### DELETE - order/{id}/build (Response)
 
-<figure><img src="../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (139).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The response field is aligned with the required response's field from the backend API
 
-<figure><img src="../../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (140).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -586,7 +586,7 @@ Continue from the Build Cancel Order Transaction section, frontend submits a sig
 
 ### DELETE - order/submit (Status Code)
 
-<figure><img src="../../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (141).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -596,25 +596,25 @@ The `200 status code` shows the api is being called and responded successfully
 
 ### DELETE - order/submit (Request params)
 
-<figure><img src="../../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (142).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The request param's fields are aligned with the required request params from the backend API
 
-<figure><img src="../../.gitbook/assets/image (95).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (143).png" alt=""><figcaption></figcaption></figure>
 
 
 
 ### DELETE - order/submit (Response)
 
-<figure><img src="../../.gitbook/assets/image (96).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (144).png" alt=""><figcaption></figcaption></figure>
 
 
 
 The response field is aligned with the required response's field from the backend API
 
-<figure><img src="../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (145).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -626,7 +626,7 @@ After successful signin, user can visit the dashboard page to view the regular w
 
 ### GET - Withdrawal-records (Status Code)
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -634,11 +634,11 @@ The `200 status code` shows the api is being called and responded successfully
 
 ### GET - Withdrawal-records (Response)
 
-<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 The withdrawal records shown in dashboard page are aligned with the data returned by the backend API. The backend API response fields are aligned with the required response fields from the backend API
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -658,7 +658,7 @@ After signing and submitting the deposit transaction, user will be able to find 
 
 
 
-<figure><img src="../../.gitbook/assets/image (132).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (180).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -672,7 +672,7 @@ Copy the full datum found in step 1 to [https://cardananium.github.io/cquisitor/
 
 
 
-<figure><img src="../../.gitbook/assets/image (133).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (181).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -744,7 +744,7 @@ Search the trasnaction by tx id in Cardano explorer and locate the `script hash`
 
 
 
-<figure><img src="../../.gitbook/assets/image (134).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (182).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -752,7 +752,7 @@ Validated the identified script hash with the output shown in cquisitor
 
 
 
-<figure><img src="../../.gitbook/assets/image (135).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (183).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -768,13 +768,13 @@ tx id:  `d4dc6ca99616a73edafa77602f33670a58f4fe61b76a043307efad9dba90dc5c`&#x20;
 
 Search the trasnaction by tx id in Cardano explorer and locate the `script hash` in Outputs
 
-<figure><img src="../../.gitbook/assets/image (136).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (184).png" alt=""><figcaption></figcaption></figure>
 
 
 
 Validated the identified script hash with the output shown in cquisitor
 
-<figure><img src="../../.gitbook/assets/image (137).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (185).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -790,13 +790,13 @@ Search the trasnaction by tx id in Cardano explorer and locate the `script hash`
 
 
 
-<figure><img src="../../.gitbook/assets/image (138).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (186).png" alt=""><figcaption></figcaption></figure>
 
 
 
 Validated the identified script hash with the output shown in cquisitor
 
-<figure><img src="../../.gitbook/assets/image (139).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (187).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -810,13 +810,13 @@ Txid: `5fde15ee7dbee50dbdea46fcff34700810cee3260eb1c78a6375ae804b4c8bd4`
 
 Search the trasnaction by tx id in Cardano explorer and locate the `script hash` in Outputs
 
-<figure><img src="../../.gitbook/assets/image (140).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (188).png" alt=""><figcaption></figcaption></figure>
 
 
 
 Validated the identified script hash with the output shown in cquisitor
 
-<figure><img src="../../.gitbook/assets/image (141).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (189).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -832,13 +832,13 @@ Txid: `3798b056eecd06f7ce900b8d332f4b236a112176aefb053d6aebc30775decb11`
 
 Search the trasnaction by tx id in Cardano explorer and locate the `script hash` in Outputs
 
-<figure><img src="../../.gitbook/assets/image (142).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (190).png" alt=""><figcaption></figcaption></figure>
 
 
 
 Validated the identified script hash with the output shown in cquisitor
 
-<figure><img src="../../.gitbook/assets/image (143).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (191).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -852,13 +852,13 @@ Txid: `f2279a6f91f2341f88e512ca56d190badfeac7e7a52812855464f03ed8662114`
 
 Search the trasnaction by tx id in Cardano explorer and locate the `script hash` in Outputs
 
-<figure><img src="../../.gitbook/assets/image (144).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (192).png" alt=""><figcaption></figcaption></figure>
 
 
 
 Validated the identified script hash with the output shown in cquisitor
 
-<figure><img src="../../.gitbook/assets/image (145).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (193).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -874,12 +874,12 @@ Txid: `de545edb93fc67d47a7b7b5c734dcd23a46fc205b6350930ddd9e578d21f49b2`
 
 Search the trasnaction by tx id in Cardano explorer and locate the `script hash` in Outputs
 
-<figure><img src="../../.gitbook/assets/image (146).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (194).png" alt=""><figcaption></figcaption></figure>
 
 
 
 Validated the identified script hash with the output shown in cquisitor
 
-<figure><img src="../../.gitbook/assets/image (147).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (195).png" alt=""><figcaption></figcaption></figure>
 
 </details>
