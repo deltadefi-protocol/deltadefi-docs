@@ -4,9 +4,26 @@
 
 <details>
 
-<summary>Wen launch?</summary>
+<summary>What is the current status of DeltaDeFi?</summary>
 
-We have launched the first beta mainnet on Nov 12! Full launch is schedule in Jan 2026, where multi-pairs will be supported with full deposit / withdrawal features.
+DeltaDeFi Spot Trading is **live on Cardano mainnet**. We launched beta mainnet in November 2025 and the full release with multi-pair support, deposits, and withdrawals is now live.
+
+Our current focus is on Hydra reliability and scalability — achieving zero corrupted states with 100+ TPS in complex UTxO sets.
+
+</details>
+
+<details>
+
+<summary>What is the decentralization roadmap?</summary>
+
+We are taking a step-by-step approach to full decentralization:
+
+1. ~~Open source & verifiable~~ ✅
+2. ~~Live on Mainnet~~ ✅
+3. **Hydra — Reliability & Scalability** ← current
+4. Community node operators
+5. Smart contract auditing (internal review, community bug bounty, independent 3rd-party verification)
+6. Token Launch + Open Governance
 
 </details>
 
@@ -14,9 +31,13 @@ We have launched the first beta mainnet on Nov 12! Full launch is schedule in Ja
 
 <summary>Any token for DeltaDeFi?</summary>
 
-We have a token plan, but right now it is still in the early stage that we don't have the exact tokenomics fleshed out.&#x20;
+Yes, we have concrete token plans built around three core principles:
 
-A certain thing is a considerable amount of distribution will be allocated for airdrop to our early adopters. [dlta-points-xp.md](../start-trading/dlta-points-xp.md "mention") will be one of our core indicators to distinguish our early supportors and rewards them accordingly.
+* **>50% Community Owned** — The majority of token supply will be allocated to users of the protocol.
+* **Massive Airdrop** — The largest share will be distributed to early participants.
+* **100% Revenue Distributed** — All protocol fees will flow back to token holders.
+
+Our [XP Program](../start-trading/dlta-points-xp.md) (Season 1) is the core mechanism to identify and reward early supporters. Every trade, deposit, and referral earns XP that will count toward the airdrop.
 
 </details>
 
@@ -42,7 +63,7 @@ Our team is deeply rooted in the Cardano ecosystem. We build on Cardano of cours
 
 <summary>Why order book?</summary>
 
-In the realm of trading, we believe the order book model is the true model that servesthe  actual demand of trading and stands the test of time. As a project aims to bridge the gap between centralized trading experience with the DeFi world, we have then chosen order book model to build the decentralized exchange.
+In the realm of trading, we believe the order book model is the true model that serves the actual demand of trading and stands the test of time. As a project aims to bridge the gap between centralized trading experience with the DeFi world, we have then chosen order book model to build the decentralized exchange.
 
 </details>
 
@@ -50,7 +71,7 @@ In the realm of trading, we believe the order book model is the true model that 
 
 <summary>Why Hydra?</summary>
 
-In order to trade with speed and bring as close user experience to centralized services as possible, we have to build on top of any available scaling technology. So far, Hydra is the only scaling technology that works on Cardano. After accessing factors like potential features, supports, and limitations, we decided that Hydra is a technology that meets the bar of DeltaDeFi's need, and then started investing in this technology.
+In order to trade with speed and bring as close user experience to centralized services as possible, we have to build on top of any available scaling technology. So far, Hydra is the only scaling technology that works on Cardano. After assessing factors like potential features, support, and limitations, we decided that Hydra is a technology that meets the bar of DeltaDeFi's need, and then started investing in this technology.
 
 </details>
 
@@ -72,50 +93,14 @@ Hydra's fund safety comes from "at least one honest participant". Achieving suff
 
 Given that the decentralization of how we use Hydra can be improved over time, and also with limited funding, our team decides to focus every resource possible on bringing the right product to Cardano at first.
 
-We will start testing by hosting all nodes and then invite trusted community parties to host part of the Hydra nodes. DeltaDeFi will become more and more decentralized as times go by, and eventually a fully decentralized DApp for the community.
-
-
+We will start testing by hosting all nodes and then invite trusted community parties to host part of the Hydra nodes. DeltaDeFi will become more and more decentralized as time goes by, and eventually a fully decentralized DApp for the community.
 
 </details>
 
 <details>
 
-<summary>Who is hosting the Hydra node right now? What is the roadmap of decentralization?</summary>
+<summary>Who is hosting the Hydra node right now?</summary>
 
-Currently we start by solely hosting the Hydra nodes, since we are working closely with Hydra team on [several issues](https://github.com/deltadefi-protocol/hydra-issues). Prior to Hydra software stablize, we have to iterate quickly for features / bug fixed. Once it becomes more stable, we will start decentalizing nodes.
-
-Overall speaking, we planned on 3 phases to decentralize DeltaDeFi:
-
-
-
-1. Current: Prove product market fit and derisk technology
-
-In this current phase, we focus on attaining product market fit of the DEX itself, and derisk technology:
-
-* Done: Architecture (merklized Hydra application), DApp development (open source suite)
-* Limitation: Hydra software stability and maintenability
-
-
-
-2. Decentralizing hydra node (post hydra software stability)
-
-Once hydra software stabilizes (at this moment mostly focusing on TPS and snapshot reliability), we will add more parties into co-hosting the hydra node to pseudo-decentralize the platform.
-
-It is not pursued now since hydra software is still under rapid updates. It will kill iteration speed if we add too early
-
-
-
-3. Decentralizing matching engine
-
-Once DeltaDeFi attains economic sustainability, we will research on designing and building a UTxO native on-chain order book, to further put order matching on-chain.
-
-
-
-We are determined to move DeltaDeFi into a community owned decentralized protocol, and taking a step-by-step approach.
-
-
+Currently we host the Hydra nodes ourselves, as we are working closely with the Hydra team on [several issues](https://github.com/deltadefi-protocol/hydra-issues). Once Hydra software stabilizes, we will begin inviting community node operators to co-host — see the decentralization roadmap above.
 
 </details>
-
-
-

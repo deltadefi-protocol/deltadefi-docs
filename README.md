@@ -1,40 +1,40 @@
 ---
-cover: .gitbook/assets/Screenshot 2025-03-11 at 4.34.37 PM.png
+cover: .gitbook/assets/Screenshot 2025-03-11 at 4.34.37 PM.png
 coverY: 0
 ---
 
-# 👋 Introduction
+# Introduction
 
-DeltaDeFi is a decentralized exchange built with Hydra, a Cardano L2 technology, to enable High-Frequency Trading (HFT) on Cardano.&#x20;
+DeltaDeFi is a decentralized exchange built on Cardano, powered by Hydra L2 — the best place to trade ADA onchain.
 
+We deliver the performance of a centralized exchange with the security of self-custody: tightest spreads, sub-second fills, and your keys always in your hands.
 
-
-### Why is there no serious trading in Cardano DeFi?
-
-{% hint style="danger" %}
-Decentralized Exchange Slippage Issue, Integration Pain & Order Management Cost&#x20;
-{% endhint %}
-
-Challenges in decentralized exchanges, such as slippage, technical complexities, and high order management costs, hinder professional traders. AMMs increase slippage, and HFT faces issues with high transaction finality and gas fees.
-
-
-
-### DeltaDeFi solves the fundamentals of DeFi trading
-
-Centralized exchanges prove their product market fit by having a seamless trading experience. DeltaDeFi aims to build a non-custodial version of it, including matching speed and price. We believe we can only level up the DeFi ecosystem back to the industry standard with the fundamentals solved:
+## Why DeltaDeFi
 
 {% hint style="success" %}
-**Instant Order Confirmation**
+**Instant Confirmation** — ~50ms average on Hydra L2
 {% endhint %}
 
 {% hint style="success" %}
-**Zero Order Placing / Cancelling Cost**
+**10bps Flat Fee** — 0.10% per trade, no gas fees, no hidden costs
 {% endhint %}
 
 {% hint style="success" %}
-**Programmatic Access / API Trading**
+**Binance-Compatible API** — Full REST + WebSocket for bots, strategies, and integrations
 {% endhint %}
 
+{% hint style="success" %}
+**Self-Custody** — Non-custodial by design, with L1 settlement guarantee
+{% endhint %}
 
+## Products
 
-With the above solution, speed and API trading can be realized, and closing the user experience gap between CeFi and DeFi
+| Product | Status | Description |
+|---------|--------|-------------|
+| **Spot Trading** | Live | Tightest spreads. Sub-second fills. #1 ADA on-chain. |
+| **Vaults** | Coming Soon | Managed USDC strategies with on-chain NAV. |
+| **XP Program** | Season 1 | Highest rewards for earliest believers. Trade, Deposit, Refer to earn XP. |
+
+## Backed By
+
+DeltaDeFi is backed by **Draper University**, **HKSTP**, **Google For Startups**, **AWS**, and **Project Catalyst**.

@@ -55,7 +55,7 @@ Since all trading activities happen in Hydra, all deposit proceed has to be comm
 
 Therefore, after you have placed the instruction to perform a deposit or withdrawal, the instructions are only fully performed when we close and re-open the active Hydra Head, which we call a "Hydra cycle". In future, when incremental commit and decommit mature, we can add deposit and withdrawal intervals between each Hydra cycle.
 
-We are constantly accessing the optimal cycle length, which is currently a wide range like 30 minutes to 12 hours. Please refer to the application for the latest workflow.
+We are constantly assessing the optimal cycle length, which is currently a wide range like 30 minutes to 12 hours. Please refer to the application for the latest workflow.
 
 </details>
 
@@ -69,7 +69,31 @@ DeltaDeFi technically supports all sizes of trading, as little as 0.1 ADA. Howev
 
 </details>
 
+## Products
 
+<details>
+
+<summary>What are Vaults?</summary>
+
+Vaults are managed USDC strategies with on-chain NAV (Net Asset Value) tracking. They allow users to deposit funds into professionally managed trading strategies without needing to actively trade themselves. Vaults are currently **Coming Soon** — stay tuned for launch details.
+
+</details>
+
+<details>
+
+<summary>What is the XP Program?</summary>
+
+The XP Program (currently in Season 1) rewards early DeltaDeFi users. There are three ways to earn XP:
+
+* **Trade** — Every trade on DeltaDeFi earns XP. Makers earn extra XP compared to takers.
+* **Deposit** — Depositing funds into your trading account earns XP.
+* **Refer** — Referrers earn 5% of their referees' trading XP.
+
+XP will be a core indicator for the upcoming token airdrop — the earliest and most active participants receive the highest rewards.
+
+For more details, see [DLTA Points (XP)](../start-trading/dlta-points-xp.md).
+
+</details>
 
 ## Developer
 
@@ -122,10 +146,6 @@ This is the balance that is in transition states, which are not available for tr
 
 1. Deposit in progress
 2. Withdrawal in progress
-
-3) Balance held up by active orders (e.g. limit orders on book)
+3. Balance held up by active orders (e.g. limit orders on book)
 
 </details>
-
-
-

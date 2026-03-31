@@ -1,12 +1,32 @@
-# ✨ DLTA Points (XP)
+# XP Program — Season 1
 
 <figure><img src="../.gitbook/assets/image (196).png" alt=""><figcaption></figcaption></figure>
 
-We are launching with a brand new XP system to reward our loyal early adopters! From now on, every dollar trade happened on DeltaDeFi, we will reward you with points. There are some quick hints for earning XPs:
+**Highest rewards for earliest believers.** Every action on DeltaDeFi earns XP, and early participants are rewarded most.
 
-* Maker will earn extra XP compared to taker
-* Referrer get 5% of your referees points earned from trade!
-* There will be quests to earn extra points!
-* On hitting certain status / tier, there would be mysterious perks!
-* &#x20;Last but not least, we are pretty set to make our early adopters find DeltaDeFi home :heart:
+## How to earn XP
 
+There are three ways to earn XP:
+
+### Trade
+
+Every dollar traded on DeltaDeFi earns XP. Makers earn extra XP compared to takers — providing liquidity on the order book is rewarded more.
+
+### Deposit
+
+Depositing funds into your DeltaDeFi trading account earns XP.
+
+### Refer
+
+Referrers earn **5%** of their referees' points earned from trading. Share your referral link and earn as your friends trade.
+
+## Multipliers
+
+The current season features a **3x active multiplier** — XP earnings are boosted for active participants.
+
+## Why earn XP?
+
+* XP will be a core indicator for the upcoming **token airdrop** — the largest share will go to early participants.
+* On hitting certain status / tier, there will be exclusive perks.
+* Quests for earning bonus XP will be available.
+* We are committed to making our early adopters feel at home on DeltaDeFi.
