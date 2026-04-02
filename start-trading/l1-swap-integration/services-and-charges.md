@@ -18,6 +18,8 @@ The operator charges an additional 0.1% per swap processed. Therefore:
 * For `ADAUSDCx` / `ADAUSDM` /  `NIGHTUSDM`, in total 0.2% will be charged (0.1% for DeltaDeFi trading fee)
 * For `ADANIGHT`, in total 0.4% will be charged (0.2% for DeltaDeFi trading fee)
 
+> A minimum fee applies to cover the L1 transaction cost, split across all orders in the batch. For small orders, this minimum may exceed the percentage above. The effective fee is always the greater of the two. Users always receive at least the amount specified in toAmount. If the market fill is better than expected, the surplus (minus the fee) is passed back to the user as price improvement.
+
 The charges are reflected in [#get-market-depth](apis.md#get-market-depth "mention"), so when you see the market depth from the API the fee is already taken into account.
 
 We by default suggest a higher buffer / slippage tolerance at order placement. If there is significant buffer at order instruction, we will always capped the fee stated above (0.1% per swap processed) and the users will receive additional tokens than the amount specified at `toAmount`.
