@@ -22,4 +22,4 @@ The operator charges an additional 0.1% per swap processed. Therefore:
 
 The charges are reflected in [#get-market-depth](apis.md#get-market-depth "mention"), so when you see the market depth from the API the fee is already taken into account.
 
-We by default suggest a higher buffer / slippage tolerance at order placement. If there is significant buffer at order instruction, we will always capped the fee stated above (0.1% per swap processed) and the users will receive additional tokens than the amount specified at `toAmount`.
+We by default suggest a higher buffer / slippage tolerance (e.g. 3-5%) at order placement. If there is significant buffer at order instruction, we will always capped the fee stated above (0.1% per swap processed) and the users will receive additional tokens than the amount specified at `toAmount`.
