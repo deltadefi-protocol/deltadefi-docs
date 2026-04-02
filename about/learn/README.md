@@ -2,7 +2,7 @@
 description: Understand the philosophy of DeltaDeFi's design
 ---
 
-# Learn
+# 📖 Learn
 
 Although trading on DeltaDeFi is as easy as it seems, the design of this protocol is a combination of multiple design choices and research items. In this section, we will walk through the magic behind the scenes to bring the seamless trading experience on Cardano.
 
@@ -14,7 +14,7 @@ Although trading on DeltaDeFi is as easy as it seems, the design of this protoco
 
 ## Products at a glance
 
-**Spot Trading** (Live) — Order-book DEX on Hydra L2 with ~50ms confirmation, 0.10% flat fee, and spreads 5–6x tighter than AMM alternatives.
+**Spot Trading** (Live) — Order-book DEX on Hydra L2 with \~50ms confirmation, 0.10% flat fee, and spreads 5–6x tighter than AMM alternatives.
 
 **Vaults** (Coming Soon) — Managed USDC strategies with on-chain NAV tracking. Zero management fees.
 

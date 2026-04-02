@@ -3,7 +3,7 @@
 ### Configuration
 
 ```
-npm install @deltadefi-protocol/khor@1.0.6
+npm install @deltadefi-protocol/khor@1.1.0
 ```
 
 Obtain constants for creating transactions
@@ -15,7 +15,7 @@ import { KhorConstants, SwapIntentTx } from "@deltadefi-protocol/khor";
 // Setup
 const blockfrost = new BlockfrostProvider("YOUR_BLOCKFROST_API_KEY");
 const wallet = new MeshWallet({
-  networkId: 0,
+  networkId: 1,
   fetcher: blockfrost,
   submitter: blockfrost,
   key: { type: "mnemonic", words: "your 24 words here".split(" ") },
@@ -27,7 +27,7 @@ const utxos = await wallet.getUtxos();
 const collateral = (await wallet.getCollateral())[0];
 
 // Create swap intent
-const config = new KhorConstants("preprod");
+const config = new KhorConstants("mainnet");
 const swapIntentTx = new SwapIntentTx(config);
 ```
 
@@ -46,8 +46,8 @@ const result = await swapIntentTx.createSwapIntent(
     collateral,
     changeAddress: userAddress,
     accountAddress: userAddress,
-    fromAmount: [{ unit: config.tokens.usdm, quantity: "100000000" }], // 100 NIGHT
-    toAmount: [{ unit: config.tokens.usdm, quantity: "5000000" }], // 5 USDCx
+    fromAmount: [{ unit: config.tokens.night, quantity: "100000000" }], // 100 NIGHT
+    toAmount: [{ unit: config.tokens.usdcx, quantity: "5000000" }], // 5 USDCx
     // Optional parameters:
     // deposit: 2_000_000,        // default: 2 ADA
     // expiry: 10 * 60 * 1000,    // default: 10 mins (in milliseconds)
@@ -102,10 +102,9 @@ The full Aiken contract that processed the swap and its off-chain SDK can be acc
 
 Network parameters and constants can also be found in the SDK.
 
-
-
 ### Supported Pairs
 
 * `ADAUSDCx`
-* `NIGHTUSDCx`
-* `NIGHTADA`
+* `ADAUSDM`
+* `NIGHTUSDM`
+* `ADANIGHT`

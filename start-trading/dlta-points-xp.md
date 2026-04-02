@@ -1,4 +1,4 @@
-# XP Program — Season 1
+# ✨ DLTA Points (XP)
 
 <figure><img src="../.gitbook/assets/image (196).png" alt=""><figcaption></figcaption></figure>
 

@@ -7,7 +7,7 @@ DeltaDeFi hosts official APIs to improve accessibility of the L1 swap contracts.
 | Environment | URL Endpoint                            |
 | ----------- | --------------------------------------- |
 | Pre-Prod    | `https://operator-staging.deltadefi.io` |
-| Mainnet     | TBC                                     |
+| Mainnet     | `https://operator.deltadefi.io`         |
 
 ***
 
@@ -18,7 +18,7 @@ Get the current market depth for a trading pair post fee. The `price` shown in d
 #### Example Request
 
 ```
-GET /swapIntent/depth/NIGHTUSDC
+GET /swapIntent/depth/NIGHTUSDM
 ```
 
 #### Example Response
@@ -46,11 +46,11 @@ GET /swapIntent/depth/NIGHTUSDC
 
 #### Supported Symbols
 
-| Symbol       | Type       | Description                                                                           |
-| ------------ | ---------- | ------------------------------------------------------------------------------------- |
-| `ADAUSDCx`   | Direct     | ADA/USDC pair — 0.2% spread (0.1% trading + 0.1% operator)                            |
-| `NIGHTUSDCx` | Direct     | NIGHT/USDC pair — 0.2% spread                                                         |
-| `NIGHTADA`   | Cross-pair | Synthetic depth from NIGHTUSDC + ADAUSDC — 0.4% spread (0.2% trading + 0.2% operator) |
+| Symbol      | Type       | Description                                                                           |
+| ----------- | ---------- | ------------------------------------------------------------------------------------- |
+| `ADAUSDCx`  | Direct     | ADA/USDC pair — 0.2% spread (0.1% trading + 0.1% operator)                            |
+| `NIGHTUSDM` | Direct     | NIGHT/USDC pair — 0.2% spread                                                         |
+| `ADANIGHT`  | Cross-pair | Synthetic depth from NIGHTUSDC + ADAUSDC — 0.4% spread (0.2% trading + 0.2% operator) |
 
 ***
 
@@ -67,36 +67,45 @@ GET /pairs
 #### Example Response
 
 ```json
-{
-  "pairs": [
-    {
-      "symbol": "ADAUSDCx",
-      "baseToken": "ADA",
-      "baseTokenUnit": "lovelace",
-      "quoteToken": "USDCx",
-      "quoteTokenUnit": "c48f0767b34514e550c04de081673e370e87bf00e6cc0e831a0e4592...",
-      "priceDp": 4,
-      "quantityDp": 1
-    },
-    {
-      "symbol": "NIGHTUSDCx",
-      "baseToken": "NIGHT",
-      "baseTokenUnit": "ab4a4f5508ced3e2a8a63770a1355c4830d66ab061",
-      "quoteToken": "USDCx",
-      "quoteTokenUnit": "c48f0767b34514e550c04de081673e370e87bf00e6cc0e831a0e4592...",
-      "priceDp": 5,
-      "quantityDp": 1
-    },
-    {
-      "symbol": "NIGHTADA",
-      "baseToken": "NIGHT",
-      "baseTokenUnit": "ab4a4f5508ced3e2a8a63770a1355c4830d66ab061",
-      "quoteToken": "ADA",
-      "quoteTokenUnit": "lovelace",
-      "priceDp": 3,
-      "quantityDp": 1
-    }
-  ]
+[6:44 PM]{
+    "pairs": [
+        {
+            "symbol": "ADAUSDM",
+            "baseToken": "ADA",
+            "baseTokenUnit": "lovelace",
+            "quoteToken": "USDM",
+            "quoteTokenUnit": "c48cbb3d5e57ed56e276bc45f99ab39abe94e6cd7ac39fb402da47ad0014df105553444d",
+            "priceDp": 4,
+            "quantityDp": 1
+        },
+        {
+            "symbol": "NIGHTUSDM",
+            "baseToken": "NIGHT",
+            "baseTokenUnit": "0691b2fecca1ac4f53cb6dfb00b7013e561d1f34403b957cbb5af1fa4e49474854",
+            "quoteToken": "USDM",
+            "quoteTokenUnit": "c48cbb3d5e57ed56e276bc45f99ab39abe94e6cd7ac39fb402da47ad0014df105553444d",
+            "priceDp": 5,
+            "quantityDp": 1
+        },
+        {
+            "symbol": "ADAUSDCx",
+            "baseToken": "ADA",
+            "baseTokenUnit": "lovelace",
+            "quoteToken": "USDCx",
+            "quoteTokenUnit": "1f3aec8bfe7ea4fe14c5f121e2a92e301afe414147860d557cac7e345553444378",
+            "priceDp": 4,
+            "quantityDp": 1
+        },
+        {
+            "symbol": "ADANIGHT",
+            "baseToken": "ADA",
+            "baseTokenUnit": "lovelace",
+            "quoteToken": "NIGHT",
+            "quoteTokenUnit": "0691b2fecca1ac4f53cb6dfb00b7013e561d1f34403b957cbb5af1fa4e49474854",
+            "priceDp": 3,
+            "quantityDp": 1
+        }
+    ]
 }
 ```
 
@@ -168,7 +177,7 @@ The order is still on-chain but has passed the 600-slot (\~10 minute) expiry win
   "status": "expired",
   "order": {
     "side": "sell",
-    "symbol": "NIGHTUSDCx",
+    "symbol": "NIGHTUSDM",
     "fromAmount": [{ "unit": "ab4a4f55...", "quantity": "50000000" }],
     "toAmount": [{ "unit": "c48f0767b...", "quantity": "2500000" }],
     "price": "0.05100"
