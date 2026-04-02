@@ -3,7 +3,7 @@
 ### Configuration
 
 ```
-npm install @deltadefi-protocol/khor@1.1.0
+npm install @deltadefi-protocol/khor@1.1.1
 ```
 
 Obtain constants for creating transactions
