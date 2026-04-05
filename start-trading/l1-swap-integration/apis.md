@@ -124,6 +124,74 @@ GET /pairs
 
 ***
 
+### GET - Swap Intent UTxOs
+
+Get all UTxOs at the swap intent script address with parsed datum information. Responses are cached for 60 seconds to reduce on-chain queries.
+
+#### Example Request
+
+```
+GET /swapIntent/utxos
+```
+
+#### Example Response
+
+```json
+[
+  {
+    "tx_hash": "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2",
+    "output_index": 0,
+    "address": "addr_test1wz...",
+    "amount": [
+      { "unit": "lovelace", "quantity": "5000000" },
+      { "unit": "c48f0767b...", "quantity": "10000000" }
+    ],
+    "swap_intent": {
+      "accountAddress": "addr_test1qz...",
+      "fromAmount": [{ "unit": "c48f0767b...", "quantity": "10000000" }],
+      "toAmount": [{ "unit": "lovelace", "quantity": "30000000" }],
+      "createdAt": 1773113131,
+      "deposit": 2000000
+    },
+    "is_valid": true
+  },
+  {
+    "tx_hash": "b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3",
+    "output_index": 1,
+    "address": "addr_test1wz...",
+    "amount": [
+      { "unit": "lovelace", "quantity": "3000000" }
+    ],
+    "swap_intent": null,
+    "is_valid": false
+  }
+]
+```
+
+#### Response Fields
+
+The response is an array of UTxO objects:
+
+| Field                          | Type        | Description                                                         |
+| ------------------------------ | ----------- | ------------------------------------------------------------------- |
+| tx\_hash                       | string      | Transaction hash of the UTxO                                        |
+| output\_index                  | number      | Output index of the UTxO                                            |
+| address                        | string      | Script address holding the UTxO                                     |
+| amount                         | array       | Assets held in the UTxO (unit + quantity)                           |
+| is\_valid                      | boolean     | Whether the UTxO holds sufficient value to cover `fromAmount` + deposit |
+| swap\_intent                   | object/null | Parsed swap intent datum, or `null` if the datum is not parseable   |
+| swap\_intent.accountAddress    | string      | Address of the account that created the swap intent                 |
+| swap\_intent.fromAmount        | array       | Assets being swapped from (on-chain format: unit + quantity)        |
+| swap\_intent.toAmount          | array       | Minimum assets expected to receive (on-chain format: unit + quantity)|
+| swap\_intent.createdAt         | number      | Slot number when the swap intent was created                        |
+| swap\_intent.deposit           | number      | Deposit amount in lovelace (optional, defaults to protocol default) |
+
+{% hint style="info" %}
+UTxOs where `swap_intent` is `null` are present at the script address but do not contain a valid swap intent datum. These can be safely ignored by integrators.
+{% endhint %}
+
+***
+
 ### GET - Order Status
 
 Get the status of a swap intent order by its UTxO reference. The UTxO reference is split into path segments (instead of `txHash#outputIndex`) to avoid URL encoding issues.
