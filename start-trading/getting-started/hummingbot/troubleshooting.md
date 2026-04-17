@@ -1,0 +1,15 @@
+# Troubleshooting
+
+| Symptom                                                                                 | Likely cause                                                      | Fix                                                                                                                                                                                         |
+| --------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Log: `sidan-gin package not available. Transaction signing will not be available.`      | `sidan-gin` not installed in the `hummingbot` conda env           | `conda activate hummingbot && pip install sidan-gin` — then restart Hummingbot                                                                                                              |
+| `connect delta-defi` succeeds, `status` is green, but orders never land on the exchange | Same as above — connector authed but can't sign                   | Same fix                                                                                                                                                                                    |
+| `ModuleNotFoundError: No module named 'sidan_gin'` at startup                           | pip installed `sidan-gin` to the wrong Python                     | `conda activate hummingbot` first, then `pip install sidan-gin`. Verify with `which python` — it should point inside the env                                                                |
+| Strategy scripts missing from the `create` dropdown                                     | `external_scripts_path` is set but the directory is wrong / empty | Check with `config external_scripts_path`. Unset the value to fall back to built-in scripts.                                                                                                |
+| `connect delta-defi` returns 401 / auth error                                           | Wrong API key or trading password                                 | Re-run `connect delta-defi` with the credentials you set when generating the API key. See [API Key / Dashboard](https://docs.deltadefi.io/start-trading/getting-started/api-key-dashboard). |
+| Unexpected API status codes in logs                                                     | —                                                                 | See [Delta-DeFi status codes](https://docs.deltadefi.io/start-trading/developers/status-code)                                                                                               |
+
+### Getting further help
+
+* Hummingbot-general issues: [Hummingbot Discord](https://discord.gg/hummingbot)
+* Delta-DeFi platform issues: see the [FAQ](https://docs.deltadefi.io/faq/general) sections on the main docs site
